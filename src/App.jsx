@@ -660,6 +660,18 @@ function ProductGallery() {
       img: '/productos/pertigas.webp',
       alt: 'Pértigas y equipamiento minero',
     },
+    {
+      name: 'Faros y Ópticas',
+      desc: 'Ópticas completas y faros para todas las marcas y modelos. Consultá disponibilidad.',
+      img: '/productos/opticas.webp',
+      alt: 'Faros y ópticas para vehículos',
+    },
+    {
+      name: 'Lámparas',
+      desc: 'Lámparas LED y halógenas de alta calidad. Mejorá la visibilidad de tu vehículo.',
+      img: '/productos/lamparas.webp',
+      alt: 'Lámparas LED para autos',
+    },
   ]
 
   return (
@@ -672,7 +684,7 @@ function ProductGallery() {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         {products.map((product) => (
           <a
             key={product.name}
