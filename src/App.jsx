@@ -7,6 +7,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 const WHATSAPP = 'https://wa.me/5492646227950'
 
+function trackWhatsAppConversion() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-16873673665/vUk2CJ7s2P0bEMGn_-0-',
+    })
+  }
+}
+
 // ─── NAVBAR ────────────────────────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -56,6 +64,7 @@ function Navbar() {
         target="_blank"
         rel="noopener noreferrer"
         id="nav-cta"
+        onClick={trackWhatsAppConversion}
         className="hidden md:flex btn-magnetic items-center gap-2 bg-yellow-brand text-black font-bold text-sm px-5 py-2 rounded-full"
       >
         <span className="btn-bg-slide bg-yellow-light rounded-full" />
@@ -94,7 +103,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-brand text-black font-bold text-center py-2.5 rounded-full mt-1"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { trackWhatsAppConversion(); setMenuOpen(false); }}
           >
             Contactar por WhatsApp
           </a>
@@ -154,10 +163,10 @@ function Hero() {
 
             {/* Headline */}
             <h1 className="max-w-3xl">
-              <div className="gsap-hidden font-heading font-medium text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight tracking-tight">
+              <div className="font-heading font-medium text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight tracking-tight">
                 Repuestos del automotor
               </div>
-              <div className="gsap-hidden font-heading font-medium text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
+              <div className="font-heading font-medium text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
                 en <span className="text-gradient-yellow">San Juan.</span>
               </div>
             </h1>
@@ -178,6 +187,7 @@ function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-cta-primary"
+                onClick={trackWhatsAppConversion}
                 className="btn-magnetic inline-flex items-center gap-3 bg-yellow-brand text-black font-bold px-8 py-4 rounded-full text-base"
               >
                 <span className="btn-bg-slide bg-yellow-light rounded-full" />
@@ -406,7 +416,7 @@ function SchedulerCard() {
 
       {/* Save button */}
       <button
-        onClick={() => window.open(WHATSAPP + '?text=Quiero%20agendar%20un%20turno', '_blank')}
+        onClick={() => { trackWhatsAppConversion(); window.open(WHATSAPP + '?text=Quiero%20agendar%20un%20turno', '_blank'); }}
         className={`mt-2 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-500 ${saved
             ? 'bg-green-500 text-white scale-95'
             : step === 2
@@ -492,6 +502,7 @@ function Features() {
               href={`${WHATSAPP}?text=${encodeURIComponent(`Hola, consulto por ${p.label}`)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               className="group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-6 px-4 hover:border-yellow-brand/40 hover:bg-yellow-brand/5 transition-all"
             >
               <Icon size={32} className="text-yellow-brand group-hover:scale-110 transition-transform" strokeWidth={1.5} />
@@ -668,6 +679,7 @@ function ProductGallery() {
             href={`${WHATSAPP}?text=${encodeURIComponent(`Hola, consulto por ${product.name}`)}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="product-card group relative rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-yellow-brand/30 transition-all duration-300"
           >
             {/* Image area */}
@@ -792,6 +804,7 @@ function CTASection() {
               href={tier.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               className={`btn-magnetic w-full text-center py-3 rounded-full font-heading font-bold text-sm ${tier.accent
                   ? 'bg-black text-yellow-brand hover:bg-graphite'
                   : 'bg-yellow-brand text-black hover:bg-yellow-light'
@@ -897,6 +910,7 @@ function FloatingWA() {
       rel="noopener noreferrer"
       id="floating-wa"
       aria-label="WhatsApp"
+      onClick={trackWhatsAppConversion}
       className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(37,211,102,0.4)]"
     >
       <svg viewBox="0 0 24 24" fill="white" className="w-7 h-7">
@@ -911,10 +925,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-void">
       <Navbar />
-      <Hero />
-      <Features />
-      <Philosophy />
-      <ProductGallery />
+      <main>
+        <Hero />
+        <Features />
+        <Philosophy />
+        <ProductGallery />
+      </main>
       <Footer />
       <FloatingWA />
     </div>
