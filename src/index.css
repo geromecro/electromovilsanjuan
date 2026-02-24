@@ -148,3 +148,13 @@ body::before {
   opacity: 0;
   transform: translateY(30px);
 }
+
+/* ─── Hero CSS animation (replaces GSAP for faster LCP) ────────────────────── */
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-fade-in {
+  opacity: 0;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

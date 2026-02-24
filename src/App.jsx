@@ -116,22 +116,6 @@ function Navbar() {
 // ─── HERO ───────────────────────────────────────────────────────────────────────
 function Hero() {
   const heroRef = useRef(null)
-  const contentRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const els = contentRef.current.querySelectorAll('.gsap-hidden')
-      gsap.to(els, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.12,
-        ease: 'power3.out',
-        delay: 0.3,
-      })
-    }, heroRef)
-    return () => ctx.revert()
-  }, [])
 
   return (
     <section
@@ -151,12 +135,12 @@ function Hero() {
       {/* Electric glow accent */}
       <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-yellow-brand/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div ref={contentRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div className="grid md:grid-cols-[1fr_1fr] gap-10 md:gap-16 items-end">
           {/* Left column */}
           <div>
             {/* Badge */}
-            <div className="gsap-hidden inline-flex items-center gap-2 border-yellow-subtle rounded-full px-4 py-1.5 mb-6 glass-dark">
+            <div className="hero-fade-in inline-flex items-center gap-2 border-yellow-subtle rounded-full px-4 py-1.5 mb-6 glass-dark" style={{animationDelay: '0.3s'}}>
               <span className="w-2 h-2 rounded-full bg-yellow-brand pulse-dot" />
               <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">+40 Años de Trayectoria</span>
             </div>
@@ -172,7 +156,7 @@ function Hero() {
             </h1>
 
             {/* Subline */}
-            <div className="gsap-hidden mt-6 flex items-center gap-3 text-ivory/50 text-sm md:text-base font-light tracking-widest uppercase">
+            <div className="hero-fade-in mt-6 flex items-center gap-3 text-ivory/50 text-sm md:text-base font-light tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
               <span>Calidad</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
               <span>Asesoramiento</span>
@@ -181,7 +165,7 @@ function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="gsap-hidden flex flex-wrap gap-4 mt-10">
+            <div className="hero-fade-in flex flex-wrap gap-4 mt-10" style={{animationDelay: '0.54s'}}>
               <a
                 href={WHATSAPP}
                 target="_blank"

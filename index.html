@@ -33,72 +33,131 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AutoPartsStore",
-      "name": "Electromóvil San Juan",
-      "url": "https://electromovilsanjuan.com",
-      "logo": "https://electromovilsanjuan.com/logo.webp",
-      "image": "https://electromovilsanjuan.com/hero-alternator.webp",
-      "description": "Empresa autopartista con más de 40 años de trayectoria. El más completo stock de repuestos del automotor en San Juan.",
-      "telephone": "+54-264-422-3645",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Rawson Sur 158",
-        "addressLocality": "San Juan",
-        "addressRegion": "San Juan",
-        "addressCountry": "AR",
-        "postalCode": "5400"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -31.5375,
-        "longitude": -68.5364
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:30",
-          "closes": "13:00"
+          "@type": "WebSite",
+          "@id": "https://electromovilsanjuan.com/#website",
+          "url": "https://electromovilsanjuan.com",
+          "name": "Electromóvil San Juan",
+          "description": "Repuestos eléctricos del automotor en San Juan",
+          "publisher": { "@id": "https://electromovilsanjuan.com/#organization" }
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "16:30",
-          "closes": "20:00"
+          "@type": "WebPage",
+          "@id": "https://electromovilsanjuan.com/#webpage",
+          "url": "https://electromovilsanjuan.com",
+          "name": "Electromóvil San Juan | Repuestos del Automotor",
+          "isPartOf": { "@id": "https://electromovilsanjuan.com/#website" },
+          "about": { "@id": "https://electromovilsanjuan.com/#organization" }
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "13:00"
+          "@type": "AutoPartsStore",
+          "@id": "https://electromovilsanjuan.com/#organization",
+          "name": "Electromóvil San Juan",
+          "url": "https://electromovilsanjuan.com",
+          "logo": "https://electromovilsanjuan.com/logo.webp",
+          "image": "https://electromovilsanjuan.com/hero-alternator.webp",
+          "description": "Empresa autopartista con más de 40 años de trayectoria. El más completo stock de repuestos del automotor en San Juan.",
+          "telephone": "+54-264-422-3645",
+          "foundingDate": "1985",
+          "priceRange": "$$",
+          "currenciesAccepted": "ARS",
+          "paymentAccepted": "Efectivo, Transferencia, Tarjeta de crédito, Tarjeta de débito",
+          "areaServed": {
+            "@type": "State",
+            "name": "San Juan",
+            "containedInPlace": { "@type": "Country", "name": "Argentina" }
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Rawson Sur 158",
+            "addressLocality": "San Juan",
+            "addressRegion": "San Juan",
+            "addressCountry": "AR",
+            "postalCode": "5400"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -31.5375,
+            "longitude": -68.5364
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:30",
+              "closes": "13:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "16:30",
+              "closes": "20:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "09:00",
+              "closes": "13:00"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Repuestos del Automotor",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Baterías" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Alternadores" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Arranques" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pértigas y equipamiento minero" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Lámparas y ópticas" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Faros y ópticas" } }
+            ]
+          },
+          "sameAs": [
+            "https://wa.me/5492646227950"
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Diagnóstico gratuito de baterías",
+          "description": "Revisamos tu batería sin costo. Diagnóstico en 5 minutos.",
+          "provider": { "@id": "https://electromovilsanjuan.com/#organization" },
+          "areaServed": "San Juan, Argentina",
+          "isRelatedTo": { "@type": "Product", "name": "Baterías" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inicio",
+              "item": "https://electromovilsanjuan.com"
+            }
+          ]
         }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Repuestos del Automotor",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Baterías" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Alternadores" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Arranques" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Pértigas y equipamiento minero" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Lámparas y ópticas" } }
-        ]
-      },
-      "foundingDate": "1985",
-      "priceRange": "$$",
-      "sameAs": [
-        "https://wa.me/5492646227950"
       ]
     }
     </script>
 
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16873673665"></script>
+    <!-- Google Ads (gtag.js) - deferred for performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-16873673665');
+      function _loadGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16873673665';
+        s.async = true;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'AW-16873673665');
+      }
+      setTimeout(_loadGtag, 3000);
+      ['click','scroll','keydown'].forEach(function(e) {
+        addEventListener(e, _loadGtag, {once: true});
+      });
     </script>
 
     <!-- Preload critical images -->
@@ -109,9 +168,9 @@
       @font-face {
         font-family: 'Montserrat';
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-display: swap;
-        src: local('Montserrat Medium'), local('Montserrat-Medium');
+        src: local('Montserrat Regular'), local('Montserrat-Regular');
       }
     </style>
 
@@ -121,12 +180,12 @@
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400&display=swap"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400&display=swap"
         rel="stylesheet"
       />
     </noscript>
