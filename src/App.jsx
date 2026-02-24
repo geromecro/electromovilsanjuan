@@ -561,11 +561,11 @@ function Philosophy() {
         <div className="text-center">
           <span className="manifesto-line font-mono text-xs text-yellow-brand uppercase tracking-widest">// Quiénes Somos</span>
 
-          <div className="manifesto-line mt-6 font-drama italic text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight">
+          <h2 className="manifesto-line mt-6 font-drama italic text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight">
             La solución integral
             <br />
             <span className="text-gradient-yellow">para tu vehículo.</span>
-          </div>
+          </h2>
 
           <div className="manifesto-line mt-8 max-w-2xl mx-auto text-ivory/50 text-base md:text-lg leading-relaxed font-light">
             Electromóvil San Juan es una empresa autopartista con más de 40 años de trayectoria.
@@ -663,8 +663,8 @@ function ProductGallery() {
       <div className="text-center mb-16">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Productos</span>
         <h2 className="font-heading font-black text-4xl md:text-5xl text-ivory mt-3">
-          Lo que tu vehículo{' '}
-          <span className="text-gradient-yellow">necesita</span>
+          Repuestos con{' '}
+          <span className="text-gradient-yellow">garantía</span>
         </h2>
       </div>
 
@@ -842,13 +842,18 @@ function Footer() {
         <div>
           <div className="font-mono text-xs text-yellow-brand uppercase tracking-widest mb-4">Sitio</div>
           <ul className="space-y-3">
-            {['Inicio', 'Servicios', 'Nosotros', 'Contacto'].map((l) => (
-              <li key={l}>
+            {[
+              { label: 'Inicio', href: '#hero' },
+              { label: 'Servicios', href: '#features' },
+              { label: 'Nosotros', href: '#philosophy' },
+              { label: 'Contacto', href: '#footer' },
+            ].map((l) => (
+              <li key={l.label}>
                 <a
-                  href={`#${l.toLowerCase()}`}
-                  className="text-ivory/30 text-sm hover:text-yellow-brand nav-link"
+                  href={l.href}
+                  className="text-ivory/30 text-sm hover:text-yellow-brand nav-link py-2 inline-block"
                 >
-                  {l}
+                  {l.label}
                 </a>
               </li>
             ))}
@@ -926,6 +931,7 @@ export default function App() {
         <Features />
         <Philosophy />
         <ProductGallery />
+        <CTASection />
       </main>
       <Footer />
       <FloatingWA />
