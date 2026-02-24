@@ -44,7 +44,7 @@ function Navbar() {
     >
       {/* Logo */}
       <a href="#hero" className="flex items-center group">
-        <img src="/logo.png" alt="Electromóvil" className="h-8 md:h-10 w-auto" />
+        <img src="/logo.webp" alt="Electromóvil" className="h-8 md:h-10 w-auto" />
       </a>
 
       {/* Desktop Links */}
@@ -74,7 +74,7 @@ function Navbar() {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden text-ivory"
+        className="md:hidden text-ivory p-3 -mr-3"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menú"
       >
@@ -843,7 +843,7 @@ function Footer() {
         {/* Brand */}
         <div className="md:col-span-2">
           <div className="mb-4">
-            <img src="/logo.png" alt="Electromóvil" className="h-12 w-auto" />
+            <img src="/logo.webp" alt="Electromóvil" className="h-12 w-auto" />
           </div>
           <p className="text-ivory/30 text-sm leading-relaxed max-w-xs">
             Repuestos eléctricos del automotor con más de 40 años de trayectoria en San Juan.
