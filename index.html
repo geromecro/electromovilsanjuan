@@ -40,7 +40,8 @@
           "url": "https://electromovilsanjuan.com",
           "name": "Electromóvil San Juan",
           "description": "Repuestos eléctricos del automotor en San Juan",
-          "publisher": { "@id": "https://electromovilsanjuan.com/#organization" }
+          "publisher": { "@id": "https://electromovilsanjuan.com/#organization" },
+          "inLanguage": "es-AR"
         },
         {
           "@type": "WebPage",
@@ -48,7 +49,11 @@
           "url": "https://electromovilsanjuan.com",
           "name": "Electromóvil San Juan | Repuestos del Automotor",
           "isPartOf": { "@id": "https://electromovilsanjuan.com/#website" },
-          "about": { "@id": "https://electromovilsanjuan.com/#organization" }
+          "about": { "@id": "https://electromovilsanjuan.com/#organization" },
+          "description": "Repuestos eléctricos del automotor en San Juan. Baterías, alternadores, arranques e iluminación. Diagnóstico gratuito. Más de 40 años de trayectoria.",
+          "datePublished": "2024-01-01",
+          "dateModified": "2026-02-24",
+          "inLanguage": "es-AR"
         },
         {
           "@type": "AutoPartsStore",
@@ -113,8 +118,30 @@
               { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Faros y ópticas" } }
             ]
           },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+54-264-422-3645",
+              "contactType": "customer service",
+              "availableLanguage": "Spanish"
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+54-264-622-7950",
+              "contactType": "sales",
+              "availableLanguage": "Spanish"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "173",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
           "sameAs": [
-            "https://wa.me/5492646227950"
+            "https://wa.me/5492646227950",
+            "https://www.instagram.com/electromovilsanjuan/"
           ]
         },
         {
@@ -123,7 +150,19 @@
           "description": "Revisamos tu batería sin costo. Diagnóstico en 5 minutos.",
           "provider": { "@id": "https://electromovilsanjuan.com/#organization" },
           "areaServed": "San Juan, Argentina",
-          "isRelatedTo": { "@type": "Product", "name": "Baterías" }
+          "isRelatedTo": { "@type": "Product", "name": "Baterías" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "ARS"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Reparación de arranques y alternadores",
+          "description": "Servicio técnico especializado. Reparamos arranques y alternadores con garantía de trabajo.",
+          "provider": { "@id": "https://electromovilsanjuan.com/#organization" },
+          "areaServed": "San Juan, Argentina"
         },
         {
           "@type": "BreadcrumbList",
@@ -191,7 +230,7 @@
     </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!-- Pre-rendered hero for instant LCP --><div style="min-height:100dvh;display:flex;align-items:flex-end;padding-bottom:6rem;background:#000 url('/hero-alternator.webp') 40% 92%/cover no-repeat;position:relative"><div style="position:absolute;inset:0;background:linear-gradient(to top,#000,rgba(0,0,0,.7),rgba(0,0,0,.3))"></div><div style="position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:0 1.5rem;width:100%"><h1 style="font-family:'Montserrat',sans-serif;font-weight:500;font-size:2.25rem;color:#F5F3EE;line-height:1.1">Repuestos del automotor<br>en <span style="color:#FBC92D">San Juan.</span></h1></div></div></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,9 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Battery, Zap, Lightbulb, Wrench, Phone, Mail, MapPin, ChevronRight, MessageCircle, Package, CreditCard, Cog, SearchCheck, ShieldCheck, Clock, Truck, HardHat } from 'lucide-react'
 
-gsap.registerPlugin(ScrollTrigger)
+let gsap, ScrollTrigger
+const gsapReady = import('gsap').then(m => {
+  gsap = m.gsap
+  return import('gsap/ScrollTrigger')
+}).then(m => {
+  ScrollTrigger = m.ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger)
+})
 
 const WHATSAPP = 'https://wa.me/5492646227950'
 
@@ -44,7 +49,7 @@ function Navbar() {
     >
       {/* Logo */}
       <a href="#hero" className="flex items-center group">
-        <img src="/logo.webp" alt="Electromóvil" className="h-8 md:h-10 w-auto" />
+        <img src="/logo.webp" alt="Electromóvil" className="h-8 md:h-10 w-auto" width="192" height="36" />
       </a>
 
       {/* Desktop Links */}
@@ -401,7 +406,7 @@ function SchedulerCard() {
       {/* Save button */}
       <button
         onClick={() => { trackWhatsAppConversion(); window.open(WHATSAPP + '?text=Quiero%20agendar%20un%20turno', '_blank'); }}
-        className={`mt-2 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-500 ${saved
+        className={`mt-2 py-2.5 min-h-[44px] rounded-full font-heading font-bold text-sm transition-all duration-500 ${saved
             ? 'bg-green-500 text-white scale-95'
             : step === 2
               ? 'bg-yellow-brand/50 text-black/50 scale-95'
@@ -422,24 +427,27 @@ function Features() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.feature-card',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          },
-        }
-      )
-    }, sectionRef)
-    return () => ctx.revert()
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.feature-card',
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 80%',
+            },
+          }
+        )
+      }, sectionRef)
+    })
+    return () => ctx?.revert()
   }, [])
 
   return (
@@ -505,34 +513,37 @@ function Philosophy() {
   const textRef = useRef(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.manifesto-line',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: 'power3.out',
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.manifesto-line',
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 70%',
+            },
+          }
+        )
+        gsap.to('.philosophy-bg', {
+          yPercent: -20,
+          ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
           },
-        }
-      )
-      gsap.to('.philosophy-bg', {
-        yPercent: -20,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
+        })
+      }, sectionRef)
+    })
+    return () => ctx?.revert()
   }, [])
 
   return (
@@ -568,8 +579,18 @@ function Philosophy() {
           </h2>
 
           <div className="manifesto-line mt-8 max-w-2xl mx-auto text-ivory/50 text-base md:text-lg leading-relaxed font-light">
-            Electromóvil San Juan es una empresa autopartista con más de 40 años de trayectoria.
-            Contamos con el más completo y variado stock de repuestos del automotor en San Juan.
+            Electromóvil San Juan es una empresa autopartista con más de 40 años
+            de trayectoria, fundada en 1985. Contamos con el más completo y variado
+            stock de repuestos eléctricos del automotor en San Juan: baterías,
+            alternadores, arranques, lámparas, ópticas y equipamiento minero.
+          </div>
+          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/50 text-base md:text-lg leading-relaxed font-light">
+            Trabajamos con marcas líderes como Moura, Reymax y Sermat en baterías,
+            garantizando calidad y durabilidad. Nuestro servicio de diagnóstico
+            gratuito permite detectar fallas antes de que se conviertan en un
+            problema mayor. Además, ofrecemos reparación especializada de arranques
+            y alternadores en nuestro propio taller, con garantía de trabajo y
+            atención personalizada en Av. Rawson Sur 158.
           </div>
         </div>
 
@@ -599,24 +620,27 @@ function ProductGallery() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.product-card',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
-          },
-        }
-      )
-    }, sectionRef)
-    return () => ctx.revert()
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.product-card',
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 70%',
+            },
+          }
+        )
+      }, sectionRef)
+    })
+    return () => ctx?.revert()
   }, [])
 
   const products = [
@@ -716,21 +740,24 @@ function ProductGallery() {
 function CTASection() {
   const ref = useRef(null)
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.cta-content',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: ref.current, start: 'top 75%' },
-        }
-      )
-    }, ref)
-    return () => ctx.revert()
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.cta-content',
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: ref.current, start: 'top 75%' },
+          }
+        )
+      }, ref)
+    })
+    return () => ctx?.revert()
   }, [])
 
   const tiers = [
@@ -827,7 +854,7 @@ function Footer() {
         {/* Brand */}
         <div className="md:col-span-2">
           <div className="mb-4">
-            <img src="/logo.webp" alt="Electromóvil" className="h-12 w-auto" />
+            <img src="/logo.webp" alt="Electromóvil" className="h-12 w-auto" width="192" height="48" />
           </div>
           <p className="text-ivory/30 text-sm leading-relaxed max-w-xs">
             Repuestos eléctricos del automotor con más de 40 años de trayectoria en San Juan.
@@ -851,7 +878,7 @@ function Footer() {
               <li key={l.label}>
                 <a
                   href={l.href}
-                  className="text-ivory/30 text-sm hover:text-yellow-brand nav-link py-2 inline-block"
+                  className="text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-block"
                 >
                   {l.label}
                 </a>
@@ -870,17 +897,28 @@ function Footer() {
             </li>
             <li>
               <a
-                href="tel:2646227950"
-                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link"
+                href="tel:2644223645"
+                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
               >
                 <Phone size={14} className="text-yellow-brand" />
-                (0264) 6227950
+                (0264) 422-3645
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5492646227950"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
+              >
+                <MessageCircle size={14} className="text-yellow-brand" />
+                (0264) 622-7950
               </a>
             </li>
             <li>
               <a
                 href="mailto:electromoviladm@gmail.com"
-                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link"
+                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
               >
                 <Mail size={14} className="text-yellow-brand" />
                 electromoviladm@gmail.com
