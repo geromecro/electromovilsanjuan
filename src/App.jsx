@@ -11,10 +11,18 @@ const gsapReady = import('gsap').then(m => {
 })
 
 const WHATSAPP = 'https://wa.me/5492646227950'
+const TYPEWRITER_MESSAGES = [
+  'Batería 12V/100Ah — Stock disponible',
+  'Alternador Bosch 90A — Garantía 1 año',
+  'Arranque Ford Falcon — Revisado y listo',
+  '+30 marcas en depósito',
+  'Envio mismo día — S/C consulte',
+  'Disponibilidad inmediata confirmada',
+]
 
 function trackWhatsAppConversion() {
-  if (typeof gtag === 'function') {
-    gtag('event', 'conversion', {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
       'send_to': 'AW-16873673665/vUk2CJ7s2P0bEMGn_-0-',
     })
   }
@@ -36,6 +44,7 @@ function Navbar() {
     { label: 'Inicio', href: '#hero' },
     { label: 'Servicios', href: '#features' },
     { label: 'Nosotros', href: '#philosophy' },
+    { label: 'Guías', href: '#guias-seo' },
     { label: 'Contacto', href: '#footer' },
   ]
 
@@ -161,7 +170,7 @@ function Hero() {
             </h1>
 
             {/* Subline */}
-            <div className="hero-fade-in mt-6 flex items-center gap-3 text-ivory/50 text-sm md:text-base font-light tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
+            <div className="hero-fade-in mt-6 flex items-center gap-3 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
               <span>Calidad</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
               <span>Asesoramiento</span>
@@ -198,10 +207,10 @@ function Hero() {
                 { icon: CreditCard, text: 'Formas de financiación' },
                 { icon: Cog, text: 'Reparación de arranques y alternadores' },
                 { icon: SearchCheck, text: 'Diagnóstico de baterías gratuito' },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-start gap-3">
-                  <Icon size={22} className="text-yellow-brand mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span className="text-ivory/90 font-light text-base md:text-lg leading-snug">{text}</span>
+              ].map((item) => (
+                <div key={item.text} className="flex items-start gap-3">
+                  <item.icon size={22} className="text-yellow-brand mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-ivory/90 font-normal text-base md:text-lg leading-snug">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -215,7 +224,7 @@ function Hero() {
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-mono font-bold text-4xl text-yellow-brand">{s.n}</div>
-                  <div className="text-ivory/40 text-xs uppercase tracking-widest mt-1">{s.label}</div>
+                  <div className="text-ivory/60 text-xs uppercase tracking-widest mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -227,7 +236,7 @@ function Hero() {
           <div className="w-6 h-10 rounded-full border border-ivory/20 flex items-start justify-center pt-1.5">
             <div className="w-1 h-2 bg-yellow-brand rounded-full animate-bounce" />
           </div>
-          <span className="text-ivory/30 text-xs font-mono uppercase tracking-widest">Deslizar</span>
+          <span className="text-ivory/50 text-xs font-mono uppercase tracking-widest">Deslizar</span>
         </div>
       </div>
     </section>
@@ -261,7 +270,7 @@ function ShufflerCard() {
         <span className="w-1.5 h-1.5 bg-green-400 rounded-full pulse-dot" />
       </div>
       <h3 className="font-heading font-bold text-xl text-ivory">Gratuito & Preciso</h3>
-      <p className="text-ivory/40 text-sm">Identificamos fallas antes de que se conviertan en problemas mayores.</p>
+      <p className="text-ivory/60 text-sm">Identificamos fallas antes de que se conviertan en problemas mayores.</p>
       <div className="relative h-36 mt-2">
         {items.map((item, i) => {
           const Icon = item.icon
@@ -282,7 +291,7 @@ function ShufflerCard() {
               </div>
               <div>
                 <div className="font-heading font-semibold text-sm text-ivory">{item.label}</div>
-                <div className="font-mono text-xs text-ivory/40">{item.status}</div>
+                <div className="font-mono text-xs text-ivory/60">{item.status}</div>
               </div>
               {i === 0 && (
                 <span className="ml-auto font-mono text-xs text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">OK</span>
@@ -297,20 +306,12 @@ function ShufflerCard() {
 
 // Card 2: Typewriter — Live repuestos feed
 function TypewriterCard() {
-  const messages = [
-    'Batería 12V/100Ah — Stock disponible',
-    'Alternador Bosch 90A — Garantía 1 año',
-    'Arranque Ford Falcon — Revisado y listo',
-    '+30 marcas en depósito',
-    'Envio mismo día — S/C consulte',
-    'Disponibilidad inmediata confirmada',
-  ]
   const [msgIndex, setMsgIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [charIndex, setCharIndex] = useState(0)
 
   useEffect(() => {
-    const current = messages[msgIndex]
+    const current = TYPEWRITER_MESSAGES[msgIndex]
     if (charIndex < current.length) {
       const t = setTimeout(() => {
         setDisplayed(current.slice(0, charIndex + 1))
@@ -319,7 +320,7 @@ function TypewriterCard() {
       return () => clearTimeout(t)
     } else {
       const t = setTimeout(() => {
-        setMsgIndex((m) => (m + 1) % messages.length)
+        setMsgIndex((m) => (m + 1) % TYPEWRITER_MESSAGES.length)
         setDisplayed('')
         setCharIndex(0)
       }, 2000)
@@ -334,7 +335,7 @@ function TypewriterCard() {
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">Live Feed</span>
       </div>
       <h3 className="font-heading font-bold text-xl text-ivory">Repuestos Inmediatos</h3>
-      <p className="text-ivory/40 text-sm">+30 marcas. Disponibilidad al instante. Sin esperas.</p>
+      <p className="text-ivory/60 text-sm">+30 marcas. Disponibilidad al instante. Sin esperas.</p>
       <div className="mt-2 bg-black/60 rounded-2xl p-4 border border-white/5 min-h-[80px]">
         <div className="font-mono text-xs text-yellow-brand/60 mb-2">$ stock_check --live</div>
         <div className="font-mono text-sm text-ivory leading-relaxed">
@@ -344,7 +345,7 @@ function TypewriterCard() {
       </div>
       <div className="flex items-center gap-2 mt-1">
         <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-        <span className="font-mono text-xs text-ivory/30">Sistema activo</span>
+        <span className="font-mono text-xs text-ivory/50">Sistema activo</span>
       </div>
     </div>
   )
@@ -382,10 +383,10 @@ function SchedulerCard() {
   return (
     <div className="card-surface rounded-4xl p-7 flex flex-col gap-4">
       <div className="flex items-center gap-2 mb-2">
-        <span className="font-mono text-xs text-ivory/40 uppercase tracking-widest">// Turnos</span>
+        <span className="font-mono text-xs text-ivory/60 uppercase tracking-widest">// Turnos</span>
       </div>
       <h3 className="font-heading font-bold text-xl text-ivory">Reparación de Arranques y Alternadores</h3>
-      <p className="text-ivory/40 text-sm">Servicio técnico especializado. Agendá tu turno fácil.</p>
+      <p className="text-ivory/60 text-sm">Servicio técnico especializado. Agendá tu turno fácil.</p>
 
       {/* Week grid */}
       <div className="grid grid-cols-7 gap-2 mt-2">
@@ -397,7 +398,7 @@ function SchedulerCard() {
                 : 'bg-black/40 border border-white/5'
               }`}
           >
-            <span className={`text-xs font-mono ${activeDay === i ? 'text-black font-bold' : 'text-ivory/30'}`}>{d}</span>
+            <span className={`text-xs font-mono ${activeDay === i ? 'text-black font-bold' : 'text-ivory/50'}`}>{d}</span>
             <div className={`w-1.5 h-1.5 rounded-full ${activeDay === i ? 'bg-black' : 'bg-white/10'}`} />
           </div>
         ))}
@@ -465,21 +466,15 @@ function Features() {
       {/* Section header */}
       <div className="mb-16 text-center">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Servicios</span>
-        <h2 className="font-heading font-black text-4xl md:text-5xl text-ivory mt-3">
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
           Todo lo que tu vehículo
           <br />
           <span className="text-gradient-yellow">necesita</span>
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <div className="feature-card order-3 md:order-1"><ShufflerCard /></div>
-        <div className="feature-card order-1 md:order-2"><TypewriterCard /></div>
-        <div className="feature-card order-2 md:order-3"><SchedulerCard /></div>
-      </div>
-
       {/* Product categories */}
-      <div className="mt-16 grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="mb-16 grid grid-cols-2 md:grid-cols-5 gap-4">
         {[
           { icon: Battery, label: 'Baterías' },
           { icon: Zap, label: 'Alternadores' },
@@ -502,6 +497,12 @@ function Features() {
             </a>
           )
         })}
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="feature-card order-3 md:order-1"><ShufflerCard /></div>
+        <div className="feature-card order-1 md:order-2"><TypewriterCard /></div>
+        <div className="feature-card order-2 md:order-3"><SchedulerCard /></div>
       </div>
     </section>
   )
@@ -578,19 +579,25 @@ function Philosophy() {
             <span className="text-gradient-yellow">para tu vehículo.</span>
           </h2>
 
-          <div className="manifesto-line mt-8 max-w-2xl mx-auto text-ivory/50 text-base md:text-lg leading-relaxed font-light">
+          <div className="manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
             Electromóvil San Juan es una empresa autopartista con más de 40 años
-            de trayectoria, fundada en 1985. Contamos con el más completo y variado
-            stock de repuestos eléctricos del automotor en San Juan: baterías,
-            alternadores, arranques, lámparas, ópticas y equipamiento minero.
+            de trayectoria, fundada en 1985. Desde nuestro local en Av. Guillermo Rawson 158 Sur,
+            en pleno centro de San Juan, atendemos a miles de clientes que confían
+            en nuestra experiencia y variedad de stock.
           </div>
-          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/50 text-base md:text-lg leading-relaxed font-light">
-            Trabajamos con marcas líderes como Moura, Reymax y Sermat en baterías,
-            garantizando calidad y durabilidad. Nuestro servicio de diagnóstico
-            gratuito permite detectar fallas antes de que se conviertan en un
-            problema mayor. Además, ofrecemos reparación especializada de arranques
-            y alternadores en nuestro propio taller, con garantía de trabajo y
-            atención personalizada en Av. Rawson Sur 158.
+          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
+            Contamos con el más completo surtido de repuestos eléctricos del automotor
+            en la provincia: baterías de las marcas Moura, Reymax y Sermat,
+            alternadores, motores de arranque, lámparas LED y halógenas, ópticas
+            completas y equipamiento eléctrico para minería. Nuestro compromiso
+            es ofrecer productos de calidad con asesoramiento técnico real.
+          </div>
+          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
+            Lo que nos diferencia es nuestro servicio integral: diagnóstico gratuito
+            de baterías en 5 minutos, reparación de arranques y alternadores en
+            nuestro propio taller con garantía de trabajo, y un equipo que conoce
+            cada pieza porque lleva décadas en el rubro. No solo vendemos repuestos
+            — te ayudamos a encontrar la solución correcta para tu vehículo.
           </div>
         </div>
 
@@ -601,15 +608,119 @@ function Philosophy() {
             { icon: Wrench, title: 'Reparación', desc: 'Servicio técnico de arranques y alternadores' },
             { icon: SearchCheck, title: 'Diagnóstico gratis', desc: 'Revisamos tu batería sin costo' },
             { icon: HardHat, title: 'Equipo minero', desc: 'Equipamiento especializado para minería' },
-          ].map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 md:p-6 hover:border-yellow-brand/30 transition-colors">
-              <Icon size={28} className="text-yellow-brand mb-4" strokeWidth={1.5} />
-              <h3 className="font-heading font-semibold text-ivory text-base md:text-lg">{title}</h3>
-              <p className="text-ivory/40 text-sm mt-2 leading-relaxed font-light">{desc}</p>
+          ].map((item) => (
+            <div key={item.title} className="group rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 md:p-6 hover:border-yellow-brand/30 transition-colors">
+              <item.icon size={28} className="text-yellow-brand mb-4" strokeWidth={1.5} />
+              <h3 className="font-heading font-semibold text-ivory text-base md:text-lg">{item.title}</h3>
+              <p className="text-ivory/60 text-sm mt-2 leading-relaxed font-normal">{item.desc}</p>
             </div>
           ))}
         </div>
 
+      </div>
+    </section>
+  )
+}
+
+// ─── TESTIMONIALS ────────────────────────────────────────────────────────────
+function Testimonials() {
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.testimonial-card',
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 75%',
+            },
+          }
+        )
+      }, sectionRef)
+    })
+    return () => ctx?.revert()
+  }, [])
+
+  const reviews = [
+    {
+      name: 'Ariel Andres Brizuela',
+      rating: 5,
+      text: 'Tienen muy buenos precios, compré un campo de arranque que en otros lados me salía 25000 más caros. Gracias por tener precios económicos! Sigan así!',
+    },
+    {
+      name: 'Gabriel Burgoa',
+      rating: 5,
+      text: 'Muy buena atención... Desde el dueño hasta sus empleados... Y los precios son excelentes!',
+    },
+    {
+      name: 'Gonzalo Andersen',
+      rating: 5,
+      text: 'Excelente atención, todos los muchachos muy buenas personas y muy recomendable en precios y calidad.',
+    },
+    {
+      name: 'Miguel Castillo',
+      rating: 5,
+      text: 'Tienen buen precio en baterías y variedad.',
+    },
+  ]
+
+  return (
+    <section ref={sectionRef} className="py-28 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Reseñas</span>
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
+          Lo que dicen nuestros <span className="text-gradient-yellow">clientes</span>
+        </h2>
+        <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="flex gap-0.5">
+            {[1,2,3,4,5].map(i => (
+              <svg key={i} className="w-5 h-5 text-yellow-brand" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-ivory/70 text-sm font-semibold">4.5/5</span>
+          <span className="text-ivory/50 text-sm">— 173 reseñas en Google</span>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {reviews.map((review) => (
+          <div
+            key={review.name}
+            className="testimonial-card rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 flex flex-col gap-4 hover:border-yellow-brand/20 transition-colors"
+          >
+            <div className="flex gap-0.5">
+              {Array.from({ length: review.rating }, (_, i) => (
+                <svg key={i} className="w-4 h-4 text-yellow-brand" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p className="text-ivory/70 text-sm leading-relaxed flex-1">"{review.text}"</p>
+            <div className="font-heading font-semibold text-ivory text-sm">{review.name}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-10">
+        <a
+          href="https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z/data=!3m1!4b1!4m6!3m5!1s0x96816a85cd8d9f15:0xe18bcfafa1dcfb6e!8m2!3d-31.5353497!4d-68.5147027!16s%2Fg%2F11g6xwv814"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-yellow-brand font-mono text-sm hover:underline"
+        >
+          Ver las 173 reseñas en Google <ChevronRight size={14} />
+        </a>
       </div>
     </section>
   )
@@ -646,39 +757,39 @@ function ProductGallery() {
   const products = [
     {
       name: 'Baterías',
-      desc: 'Amplio stock de baterías para autos, camionetas y maquinaria. Las mejores marcas con garantía.',
+      desc: 'Trabajamos con las marcas líderes del mercado: Moura, Reymax y Sermat. Tenemos baterías para autos, camionetas, utilitarios, maquinaria pesada y motos. El clima extremo de San Juan exige baterías de alta resistencia térmica — por eso seleccionamos productos que garantizan rendimiento y durabilidad en temperaturas elevadas. Todas nuestras baterías vienen con garantía de fábrica y te hacemos el diagnóstico gratuito antes de la compra para asegurarnos de que realmente necesitás un cambio.',
       img: '/productos/baterias.webp',
-      alt: 'Baterías para vehículos en San Juan',
+      alt: 'Baterías Moura, Reymax y Sermat para vehículos en San Juan',
     },
     {
       name: 'Alternadores',
-      desc: 'Alternadores nuevos y reparados. Diagnóstico gratuito para verificar el estado del tuyo.',
+      desc: 'Alternadores nuevos y reparados para todas las marcas y modelos. Contamos con banco de pruebas para verificar carga y estado antes de la instalación. Si tu alternador tiene fallas, nuestro equipo técnico lo evalúa sin costo y te ofrece la mejor solución: reparación en nuestro taller o reemplazo por uno nuevo con garantía.',
       img: '/productos/alternadores.webp',
-      alt: 'Alternadores para autos en San Juan',
+      alt: 'Alternadores para autos y camionetas en San Juan',
     },
     {
       name: 'Arranques',
-      desc: 'Motores de arranque de todas las marcas. Servicio de reparación en el momento.',
+      desc: 'Motores de arranque de todas las marcas nacionales e importadas. Nuestro taller especializado realiza reparaciones con repuestos originales y garantía de trabajo. Si tu vehículo no enciende o el arranque gira lento, traélo para un diagnóstico sin cargo — te damos una solución rápida y confiable.',
       img: '/productos/arranques.webp',
-      alt: 'Motores de arranque para vehículos',
+      alt: 'Motores de arranque para vehículos en San Juan',
     },
     {
       name: 'Pértigas',
-      desc: 'Equipamiento especializado para minería y trabajo en altura. Consulte disponibilidad.',
+      desc: 'Equipamiento especializado para minería y trabajo en altura. San Juan es una de las principales provincias mineras de Argentina, y proveemos pértigas y accesorios eléctricos para la industria. Consultá disponibilidad y especificaciones técnicas por WhatsApp.',
       img: '/productos/pertigas.webp',
-      alt: 'Pértigas y equipamiento minero',
+      alt: 'Pértigas y equipamiento eléctrico minero en San Juan',
     },
     {
       name: 'Faros y Ópticas',
-      desc: 'Ópticas completas y faros para todas las marcas y modelos. Consultá disponibilidad.',
+      desc: 'Ópticas completas, faros delanteros y traseros para todas las marcas y modelos. Trabajamos con líneas originales y alternativas de calidad. Una óptica en buen estado es fundamental para la seguridad vial — si la tuya tiene fisuras o empañamiento, te asesoramos sobre la mejor opción de reemplazo.',
       img: '/productos/opticas.webp',
-      alt: 'Faros y ópticas para vehículos',
+      alt: 'Faros y ópticas completas para autos en San Juan',
     },
     {
       name: 'Lámparas',
-      desc: 'Lámparas LED y halógenas de alta calidad. Mejorá la visibilidad de tu vehículo.',
+      desc: 'Lámparas LED, halógenas y xenón de alta calidad para todo tipo de vehículo. Mejorá la visibilidad y la seguridad de manejo nocturno con nuestras lámparas de primeras marcas. Tenemos opciones para faros principales, luces de posición, giro, freno y marcha atrás.',
       img: '/productos/lamparas.webp',
-      alt: 'Lámparas LED para autos',
+      alt: 'Lámparas LED y halógenas para autos en San Juan',
     },
   ]
 
@@ -686,7 +797,7 @@ function ProductGallery() {
     <section id="products" ref={sectionRef} className="py-28 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Productos</span>
-        <h2 className="font-heading font-black text-4xl md:text-5xl text-ivory mt-3">
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
           Repuestos con{' '}
           <span className="text-gradient-yellow">garantía</span>
         </h2>
@@ -724,7 +835,7 @@ function ProductGallery() {
               <h3 className="font-heading font-bold text-xl text-ivory group-hover:text-yellow-brand transition-colors">
                 {product.name}
               </h3>
-              <p className="text-ivory/40 text-sm mt-2 leading-relaxed font-light">{product.desc}</p>
+              <p className="text-ivory/60 text-sm mt-2 leading-relaxed font-normal">{product.desc}</p>
               <div className="mt-4 inline-flex items-center gap-2 text-yellow-brand font-mono text-sm group-hover:gap-3 transition-all">
                 Consultar <ChevronRight size={14} />
               </div>
@@ -763,7 +874,7 @@ function CTASection() {
   const tiers = [
     {
       name: 'Consulta',
-      desc: 'Asesoramiento por WhatsApp sobre tu repuesto o falla.',
+      desc: 'Escribinos por WhatsApp y te asesoramos sobre el repuesto que necesitás. Nuestro equipo con más de 40 años de experiencia te orienta sobre compatibilidad, marcas y disponibilidad sin compromiso.',
       price: 'Gratis',
       features: ['Respuesta rápida', 'Asesor especializado', 'Sin compromiso'],
       cta: 'Consultar',
@@ -772,7 +883,7 @@ function CTASection() {
     },
     {
       name: 'Diagnóstico',
-      desc: 'Traé tu auto y te hacemos el diagnóstico completo sin costo.',
+      desc: 'Traé tu vehículo y en 5 minutos te hacemos un diagnóstico completo de batería, alternador y arranque con equipamiento profesional. Detectamos fallas antes de que se conviertan en un problema mayor.',
       price: 'Gratis',
       features: ['Batería + Alternador + Arranque', 'Tecnología especializada', 'Informe detallado'],
       cta: 'Agendar Turno',
@@ -781,7 +892,7 @@ function CTASection() {
     },
     {
       name: 'Reparación',
-      desc: 'Reparamos arranques y alternadores en nuestro taller.',
+      desc: 'Reparamos arranques y alternadores en nuestro propio taller con repuestos de calidad y garantía de trabajo. No tercerizamos — hacemos todo en casa para darte la mejor solución al mejor precio.',
       price: 'A consultar',
       features: ['+40 años de experiencia', 'Garantía de trabajo', 'Repuestos de calidad'],
       cta: 'Consultar Precio',
@@ -794,7 +905,7 @@ function CTASection() {
     <section ref={ref} className="py-28 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="text-center mb-16 cta-content">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Servicios</span>
-        <h2 className="font-heading font-black text-4xl md:text-5xl text-ivory mt-3">
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
           Elegí cómo <span className="text-gradient-yellow">ayudarte</span>
         </h2>
       </div>
@@ -814,7 +925,7 @@ function CTASection() {
             <div className={`font-drama italic text-4xl font-bold mb-1 ${tier.accent ? 'text-black' : 'text-gradient-yellow'}`}>
               {tier.price}
             </div>
-            <p className={`text-sm mb-6 ${tier.accent ? 'text-black/70' : 'text-ivory/40'}`}>{tier.desc}</p>
+            <p className={`text-sm mb-6 ${tier.accent ? 'text-black/70' : 'text-ivory/60'}`}>{tier.desc}</p>
             <ul className="flex flex-col gap-2.5 mb-8 flex-1">
               {tier.features.map((f) => (
                 <li key={f} className={`flex items-center gap-2 text-sm ${tier.accent ? 'text-black/80' : 'text-ivory/60'}`}>
@@ -843,6 +954,147 @@ function CTASection() {
   )
 }
 
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    let ctx
+    gsapReady.then(() => {
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          '.faq-item',
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 75%',
+            },
+          }
+        )
+      }, sectionRef)
+    })
+    return () => ctx?.revert()
+  }, [])
+
+  const faqs = [
+    {
+      q: '¿Cómo sé si mi batería necesita cambio?',
+      a: 'Las señales más comunes son: el motor tarda en arrancar, las luces se ven más tenues de lo normal, el tablero muestra el ícono de batería, o la batería tiene más de 2-3 años de uso. En San Juan, el calor extremo del verano acorta la vida útil de las baterías. Te recomendamos traer tu vehículo para un diagnóstico gratuito — en 5 minutos te decimos el estado exacto de tu batería.',
+    },
+    {
+      q: '¿Qué marcas de baterías trabajan?',
+      a: 'Trabajamos con las tres marcas líderes del mercado argentino: Moura, Reymax y Sermat. Cada una tiene líneas específicas para autos, camionetas, utilitarios y maquinaria pesada. Te asesoramos sobre cuál es la mejor opción según tu vehículo, uso y presupuesto. Todas vienen con garantía de fábrica.',
+    },
+    {
+      q: '¿Cuánto dura una batería en San Juan?',
+      a: 'En condiciones normales, una batería dura entre 2 y 4 años. Sin embargo, el clima de San Juan — con veranos que superan los 40°C — acelera el desgaste interno de las baterías. Por eso recomendamos hacer un chequeo preventivo al menos una vez al año, especialmente antes del verano. Nuestro diagnóstico es gratuito y te ayuda a prevenir quedarte sin arranque.',
+    },
+    {
+      q: '¿Hacen reparación de alternadores y arranques?',
+      a: 'Sí, contamos con taller propio donde reparamos alternadores y motores de arranque de todas las marcas. Primero hacemos un diagnóstico sin costo para determinar si la pieza se puede reparar o si conviene reemplazarla. Todos nuestros trabajos tienen garantía y usamos repuestos de calidad.',
+    },
+    {
+      q: '¿Cuáles son los horarios de atención?',
+      a: 'Atendemos de lunes a viernes de 8:30 a 13:00 y de 16:30 a 20:00. Los sábados de 9:00 a 13:00. Estamos en Av. Guillermo Rawson 158 Sur, en el centro de San Juan. También podés consultarnos por WhatsApp fuera de horario y te respondemos a la brevedad.',
+    },
+    {
+      q: '¿Aceptan tarjetas y transferencias?',
+      a: 'Sí, aceptamos efectivo, transferencia bancaria, tarjetas de débito y tarjetas de crédito. Consultá por WhatsApp las opciones de financiación disponibles según el producto.',
+    },
+  ]
+
+  return (
+    <section id="faq" ref={sectionRef} className="py-28 px-6 md:px-12 max-w-4xl mx-auto">
+      <div className="text-center mb-16">
+        <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Preguntas Frecuentes</span>
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
+          Resolvemos tus <span className="text-gradient-yellow">dudas</span>
+        </h2>
+      </div>
+
+      <div className="space-y-3">
+        {faqs.map((faq, i) => (
+          <div
+            key={i}
+            className="faq-item rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors hover:border-yellow-brand/20"
+          >
+            <button
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              className="w-full flex items-center justify-between gap-4 p-6 text-left"
+            >
+              <h3 className="font-heading font-semibold text-ivory text-base md:text-lg pr-4">{faq.q}</h3>
+              <ChevronRight
+                size={20}
+                className={`text-yellow-brand shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-90' : ''}`}
+              />
+            </button>
+            {openIndex === i && (
+              <div className="px-6 pb-6 -mt-2">
+                <p className="text-ivory/60 text-sm md:text-base leading-relaxed">{faq.a}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+// ─── SEO LANDING LINKS ─────────────────────────────────────────────────────────
+function SeoLandingLinks() {
+  const guides = [
+    {
+      title: 'Baterías en San Juan',
+      desc: 'Guía completa sobre marcas, garantía, síntomas de falla y chequeo gratuito.',
+      href: '/baterias-san-juan/',
+    },
+    {
+      title: 'Baterías de Auto en San Juan',
+      desc: 'Qué batería elegir según uso, clima y tipo de vehículo.',
+      href: '/baterias-de-auto-san-juan/',
+    },
+    {
+      title: 'Precio de Batería de Auto',
+      desc: 'Factores que definen el precio y cómo evitar pagar de más.',
+      href: '/precio-bateria-auto-san-juan/',
+    },
+  ]
+
+  return (
+    <section id="guias-seo" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
+      <div className="text-center mb-12">
+        <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Guías útiles</span>
+        <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
+          Información para elegir <span className="text-gradient-yellow">mejor</span>
+        </h2>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-5">
+        {guides.map((guide) => (
+          <a
+            key={guide.title}
+            href={guide.href}
+            className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-6 hover:border-yellow-brand/30 transition-colors"
+          >
+            <h3 className="font-heading font-semibold text-xl text-ivory">{guide.title}</h3>
+            <p className="text-ivory/60 text-sm mt-2 leading-relaxed">{guide.desc}</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-yellow-brand font-mono text-sm">
+              Ver guía <ChevronRight size={14} />
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 // ─── FOOTER ─────────────────────────────────────────────────────────────────────
 function Footer() {
   return (
@@ -856,12 +1108,12 @@ function Footer() {
           <div className="mb-4">
             <img src="/logo.webp" alt="Electromóvil" className="h-12 w-auto" width="192" height="48" />
           </div>
-          <p className="text-ivory/30 text-sm leading-relaxed max-w-xs">
+          <p className="text-ivory/50 text-sm leading-relaxed max-w-xs">
             Repuestos eléctricos del automotor con más de 40 años de trayectoria en San Juan.
           </p>
           <div className="mt-6 flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-400 pulse-dot" />
-            <span className="font-mono text-xs text-ivory/30">SISTEMA OPERATIVO</span>
+            <span className="font-mono text-xs text-ivory/50">SISTEMA OPERATIVO</span>
           </div>
         </div>
 
@@ -873,12 +1125,13 @@ function Footer() {
               { label: 'Inicio', href: '#hero' },
               { label: 'Servicios', href: '#features' },
               { label: 'Nosotros', href: '#philosophy' },
+              { label: 'Guías', href: '#guias-seo' },
               { label: 'Contacto', href: '#footer' },
             ].map((l) => (
               <li key={l.label}>
                 <a
                   href={l.href}
-                  className="text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-block"
+                  className="text-ivory/50 text-sm hover:text-yellow-brand nav-link py-3 inline-block"
                 >
                   {l.label}
                 </a>
@@ -891,14 +1144,14 @@ function Footer() {
         <div>
           <div className="font-mono text-xs text-yellow-brand uppercase tracking-widest mb-4">Contacto</div>
           <ul className="space-y-3">
-            <li className="flex items-start gap-2 text-ivory/30 text-sm">
+            <li className="flex items-start gap-2 text-ivory/50 text-sm">
               <MapPin size={14} className="text-yellow-brand mt-0.5 shrink-0" />
               Av. Guillermo Rawson 158 Sur, San Juan
             </li>
             <li>
               <a
                 href="tel:2644223645"
-                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
+                className="flex items-center gap-2 text-ivory/50 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
               >
                 <Phone size={14} className="text-yellow-brand" />
                 (0264) 422-3645
@@ -909,7 +1162,7 @@ function Footer() {
                 href="https://wa.me/5492646227950"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
+                className="flex items-center gap-2 text-ivory/50 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
               >
                 <MessageCircle size={14} className="text-yellow-brand" />
                 (0264) 622-7950
@@ -918,7 +1171,7 @@ function Footer() {
             <li>
               <a
                 href="mailto:electromoviladm@gmail.com"
-                className="flex items-center gap-2 text-ivory/30 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
+                className="flex items-center gap-2 text-ivory/50 text-sm hover:text-yellow-brand nav-link py-3 inline-flex"
               >
                 <Mail size={14} className="text-yellow-brand" />
                 electromoviladm@gmail.com
@@ -929,10 +1182,10 @@ function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-        <span className="font-mono text-xs text-ivory/20">
+        <span className="font-mono text-xs text-ivory/40">
           © {new Date().getFullYear()} Electromóvil San Juan. Todos los derechos reservados.
         </span>
-        <span className="font-mono text-xs text-ivory/20">
+        <span className="font-mono text-xs text-ivory/40">
           Av. Rawson 158 Sur · San Juan · Argentina
         </span>
       </div>
@@ -968,8 +1221,11 @@ export default function App() {
         <Hero />
         <Features />
         <Philosophy />
+        <Testimonials />
         <ProductGallery />
         <CTASection />
+        <FAQ />
+        <SeoLandingLinks />
       </main>
       <Footer />
       <FloatingWA />

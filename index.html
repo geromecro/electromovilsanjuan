@@ -64,8 +64,7 @@
           "image": "https://electromovilsanjuan.com/hero-alternator.webp",
           "description": "Empresa autopartista con más de 40 años de trayectoria. El más completo stock de repuestos del automotor en San Juan.",
           "telephone": "+54-264-422-3645",
-          "foundingDate": "1985",
-          "priceRange": "$$",
+          "foundingDate": "1985-01-01",
           "currenciesAccepted": "ARS",
           "paymentAccepted": "Efectivo, Transferencia, Tarjeta de crédito, Tarjeta de débito",
           "areaServed": {
@@ -75,7 +74,7 @@
           },
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Av. Rawson Sur 158",
+            "streetAddress": "Av. Guillermo Rawson 158 Sur",
             "addressLocality": "San Juan",
             "addressRegion": "San Juan",
             "addressCountry": "AR",
@@ -134,46 +133,45 @@
           ],
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.5",
-            "reviewCount": "173",
-            "bestRating": "5",
-            "worstRating": "1"
+            "ratingValue": 4.5,
+            "reviewCount": 173,
+            "bestRating": 5,
+            "worstRating": 1
           },
           "sameAs": [
-            "https://wa.me/5492646227950",
-            "https://www.instagram.com/electromovilsanjuan/"
+            "https://www.instagram.com/electromovilsanjuan/",
+            "https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z/data=!3m1!4b1!4m6!3m5!1s0x96816a85cd8d9f15:0xe18bcfafa1dcfb6e!8m2!3d-31.5353497!4d-68.5147027!16s%2Fg%2F11g6xwv814"
           ]
         },
         {
           "@type": "Service",
+          "@id": "https://electromovilsanjuan.com/#diagnostico",
           "name": "Diagnóstico gratuito de baterías",
-          "description": "Revisamos tu batería sin costo. Diagnóstico en 5 minutos.",
+          "description": "Revisamos tu batería sin costo. Diagnóstico en 5 minutos con equipamiento profesional.",
           "provider": { "@id": "https://electromovilsanjuan.com/#organization" },
-          "areaServed": "San Juan, Argentina",
+          "areaServed": {
+            "@type": "State",
+            "name": "San Juan",
+            "containedInPlace": { "@type": "Country", "name": "Argentina" }
+          },
           "isRelatedTo": { "@type": "Product", "name": "Baterías" },
           "offers": {
             "@type": "Offer",
-            "price": "0",
+            "price": 0,
             "priceCurrency": "ARS"
           }
         },
         {
           "@type": "Service",
+          "@id": "https://electromovilsanjuan.com/#reparacion",
           "name": "Reparación de arranques y alternadores",
-          "description": "Servicio técnico especializado. Reparamos arranques y alternadores con garantía de trabajo.",
+          "description": "Servicio técnico especializado en nuestro propio taller. Reparamos arranques y alternadores con garantía de trabajo.",
           "provider": { "@id": "https://electromovilsanjuan.com/#organization" },
-          "areaServed": "San Juan, Argentina"
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Inicio",
-              "item": "https://electromovilsanjuan.com"
-            }
-          ]
+          "areaServed": {
+            "@type": "State",
+            "name": "San Juan",
+            "containedInPlace": { "@type": "Country", "name": "Argentina" }
+          }
         }
       ]
     }
@@ -219,12 +217,12 @@
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -232,5 +230,31 @@
   <body>
     <div id="root"><!-- Pre-rendered hero for instant LCP --><div style="min-height:100dvh;display:flex;align-items:flex-end;padding-bottom:6rem;background:#000 url('/hero-alternator.webp') 40% 92%/cover no-repeat;position:relative"><div style="position:absolute;inset:0;background:linear-gradient(to top,#000,rgba(0,0,0,.7),rgba(0,0,0,.3))"></div><div style="position:relative;z-index:10;max-width:80rem;margin:0 auto;padding:0 1.5rem;width:100%"><h1 style="font-family:'Montserrat',sans-serif;font-weight:500;font-size:2.25rem;color:#F5F3EE;line-height:1.1">Repuestos del automotor<br>en <span style="color:#FBC92D">San Juan.</span></h1></div></div></div>
     <script type="module" src="/src/main.jsx"></script>
+    <noscript>
+      <div style="max-width:800px;margin:2rem auto;padding:0 1.5rem;color:#F5F3EE;font-family:sans-serif">
+        <h2>Nuestros Productos</h2>
+        <ul>
+          <li><strong>Baterías</strong> — Moura, Reymax, Sermat. Para autos, camionetas y maquinaria. Diagnóstico gratuito.</li>
+          <li><strong>Alternadores</strong> — Nuevos y reparados. Verificación en banco de pruebas.</li>
+          <li><strong>Arranques</strong> — Reparación en taller propio con garantía.</li>
+          <li><strong>Pértigas y equipamiento minero</strong> — Equipamiento eléctrico para minería.</li>
+          <li><strong>Faros y ópticas</strong> — Originales y alternativas para todas las marcas.</li>
+          <li><strong>Lámparas</strong> — LED, halógenas y xenón.</li>
+        </ul>
+        <h2>Servicios</h2>
+        <ul>
+          <li>Diagnóstico gratuito de baterías en 5 minutos</li>
+          <li>Reparación de arranques y alternadores</li>
+          <li>Asesoramiento personalizado</li>
+        </ul>
+        <h2>Contacto</h2>
+        <p>Av. Guillermo Rawson 158 Sur, San Juan, Argentina</p>
+        <p>Teléfono: <a href="tel:2644223645">(0264) 422-3645</a></p>
+        <p>WhatsApp: <a href="https://wa.me/5492646227950">(0264) 622-7950</a></p>
+        <p>Email: electromoviladm@gmail.com</p>
+        <h2>Horarios</h2>
+        <p>Lunes a Viernes: 8:30-13:00 y 16:30-20:00 | Sábados: 9:00-13:00</p>
+      </div>
+    </noscript>
   </body>
 </html>

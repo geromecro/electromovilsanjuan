@@ -23,7 +23,7 @@ export default {
         sans: ['"Montserrat"', 'sans-serif'],
         heading: ['"Montserrat"', 'sans-serif'],
         drama: ['"Montserrat"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       borderRadius: {
         '2xl': '1rem',
