@@ -7,9 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "ops:funnel": "node scripts/funnel-report.mjs",
-    "ops:postventa": "node scripts/postventa-followups.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "gsap": "^3.14.2",
