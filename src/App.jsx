@@ -1,14 +1,27 @@
 import { useEffect, useRef, useState } from 'react'
 import { Battery, Zap, Lightbulb, Wrench, Phone, Mail, MapPin, ChevronRight, MessageCircle, Package, CreditCard, Cog, SearchCheck, ShieldCheck, Clock, Truck, HardHat } from 'lucide-react'
 
-let gsap, ScrollTrigger
-const gsapReady = import('gsap').then(m => {
-  gsap = m.gsap
-  return import('gsap/ScrollTrigger')
-}).then(m => {
-  ScrollTrigger = m.ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger)
-})
+function useScrollReveal(ref, threshold = 0.2) {
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const items = el.querySelectorAll('.scroll-reveal')
+    if (!items.length) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold }
+    )
+    items.forEach((item) => observer.observe(item))
+    return () => observer.disconnect()
+  }, [ref, threshold])
+}
 
 const WHATSAPP = 'https://wa.me/5492646227950'
 const TYPEWRITER_MESSAGES = [
@@ -338,7 +351,7 @@ function Hero() {
           </div>
 
           {/* Right column — Services grid */}
-          <div className="gsap-hidden hidden md:flex md:flex-col relative">
+          <div className="hero-fade-in hidden md:flex md:flex-col relative">
             <div className="absolute -inset-8 rounded-3xl bg-black/30 backdrop-blur-sm border border-white/[0.04]" />
             <div className="relative z-10 grid grid-cols-2 gap-x-12 gap-y-10 py-2">
               {[
@@ -373,7 +386,7 @@ function Hero() {
         </div>
 
         {/* Scroll hint */}
-        <div className="gsap-hidden mt-12 flex items-center gap-3">
+        <div className="hero-fade-in mt-12 flex items-center gap-3">
           <div className="w-6 h-10 rounded-full border border-ivory/20 flex items-start justify-center pt-1.5">
             <div className="w-1 h-2 bg-yellow-brand rounded-full animate-bounce" />
           </div>
@@ -567,30 +580,7 @@ function delay(ms) {
 
 function Features() {
   const sectionRef = useRef(null)
-
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.feature-card',
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 80%',
-            },
-          }
-        )
-      }, sectionRef)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(sectionRef)
 
   return (
     <section id="features" ref={sectionRef} className="relative py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
@@ -640,10 +630,10 @@ function Features() {
         })}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <div className="feature-card order-3 md:order-1"><ShufflerCard /></div>
-        <div className="feature-card order-1 md:order-2"><TypewriterCard /></div>
-        <div className="feature-card order-2 md:order-3"><SchedulerCard /></div>
+      <div className="scroll-reveal-stagger grid md:grid-cols-3 gap-6">
+        <div className="scroll-reveal feature-card order-3 md:order-1"><ShufflerCard /></div>
+        <div className="scroll-reveal feature-card order-1 md:order-2"><TypewriterCard /></div>
+        <div className="scroll-reveal feature-card order-2 md:order-3"><SchedulerCard /></div>
       </div>
     </section>
   )
@@ -653,40 +643,7 @@ function Features() {
 function Philosophy() {
   const sectionRef = useRef(null)
   const textRef = useRef(null)
-
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.manifesto-line',
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 70%',
-            },
-          }
-        )
-        gsap.to('.philosophy-bg', {
-          yPercent: -20,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        })
-      }, sectionRef)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(sectionRef)
 
   return (
     <section
@@ -712,28 +669,28 @@ function Philosophy() {
       <div ref={textRef} className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center">
-          <span className="manifesto-line font-mono text-xs text-yellow-brand uppercase tracking-widest">// Quiénes Somos</span>
+          <span className="scroll-reveal manifesto-line font-mono text-xs text-yellow-brand uppercase tracking-widest">// Quiénes Somos</span>
 
-          <h2 className="manifesto-line mt-6 font-drama italic text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight">
+          <h2 className="scroll-reveal manifesto-line mt-6 font-drama italic text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight">
             La solución integral
             <br />
             <span className="text-gradient-yellow">para tu vehículo.</span>
           </h2>
 
-          <div className="manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
+          <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
             Electromóvil San Juan es una empresa autopartista con más de 40 años
             de trayectoria, fundada en 1985. Desde nuestro local en Av. Guillermo Rawson 158 Sur,
             en pleno centro de San Juan, atendemos a miles de clientes que confían
             en nuestra experiencia y variedad de stock.
           </div>
-          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
+          <div className="scroll-reveal manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
             Contamos con el más completo surtido de repuestos eléctricos del automotor
             en la provincia: baterías de las marcas Moura, Reymax y Sermat,
             alternadores, motores de arranque, lámparas LED y halógenas, ópticas
             completas y equipamiento eléctrico para minería. Nuestro compromiso
             es ofrecer productos de calidad con asesoramiento técnico real.
           </div>
-          <div className="manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
+          <div className="scroll-reveal manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
             Lo que nos diferencia es nuestro servicio integral: diagnóstico gratuito
             de baterías en 5 minutos, reparación de arranques y alternadores en
             nuestro propio taller con garantía de trabajo, y un equipo que conoce
@@ -743,7 +700,7 @@ function Philosophy() {
         </div>
 
         {/* Feature cards */}
-        <div className="manifesto-line grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
+        <div className="scroll-reveal manifesto-line grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">
           {[
             { icon: Package, title: 'Stock completo', desc: 'Baterías, alternadores, arranques, lámparas y más' },
             { icon: Wrench, title: 'Reparación', desc: 'Servicio técnico de arranques y alternadores' },
@@ -766,30 +723,7 @@ function Philosophy() {
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 function Testimonials() {
   const sectionRef = useRef(null)
-
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.testimonial-card',
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 75%',
-            },
-          }
-        )
-      }, sectionRef)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(sectionRef)
 
   const reviews = [
     {
@@ -838,7 +772,7 @@ function Testimonials() {
         {reviews.map((review) => (
           <div
             key={review.name}
-            className="testimonial-card rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 flex flex-col gap-4 hover:border-yellow-brand/20 transition-colors"
+            className="scroll-reveal testimonial-card rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 flex flex-col gap-4 hover:border-yellow-brand/20 transition-colors"
           >
             <div className="flex gap-0.5">
               {Array.from({ length: review.rating }, (_, i) => (
@@ -870,30 +804,7 @@ function Testimonials() {
 // ─── PRODUCT GALLERY ─────────────────────────────────────────────────────────
 function ProductGallery() {
   const sectionRef = useRef(null)
-
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.product-card',
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 70%',
-            },
-          }
-        )
-      }, sectionRef)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(sectionRef)
 
   const products = [
     {
@@ -952,7 +863,7 @@ function ProductGallery() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={trackWhatsAppConversion}
-            className="product-card group relative rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-yellow-brand/30 transition-all duration-300"
+            className="scroll-reveal product-card group relative rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-yellow-brand/30 transition-all duration-300"
           >
             {/* Image area */}
             <div className="relative h-52 md:h-64 bg-gradient-to-b from-white/[0.04] to-transparent overflow-hidden">
@@ -991,26 +902,7 @@ function ProductGallery() {
 // ─── CTA SECTION ────────────────────────────────────────────────────────────────
 function CTASection() {
   const ref = useRef(null)
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.cta-content',
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: ref.current, start: 'top 75%' },
-          }
-        )
-      }, ref)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(ref)
 
   const tiers = [
     {
@@ -1044,7 +936,7 @@ function CTASection() {
 
   return (
     <section ref={ref} className="py-28 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="text-center mb-16 cta-content">
+      <div className="scroll-reveal text-center mb-16 cta-content">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Servicios</span>
         <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
           Elegí cómo <span className="text-gradient-yellow">ayudarte</span>
@@ -1055,7 +947,7 @@ function CTASection() {
         {tiers.map((tier) => (
           <div
             key={tier.name}
-            className={`cta-content rounded-4xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${tier.accent
+            className={`scroll-reveal cta-content rounded-4xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 ${tier.accent
                 ? 'bg-yellow-brand glow-yellow-strong'
                 : 'card-surface border-subtle hover:border-yellow-subtle'
               }`}
@@ -1100,29 +992,7 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
   const sectionRef = useRef(null)
 
-  useEffect(() => {
-    let ctx
-    gsapReady.then(() => {
-      ctx = gsap.context(() => {
-        gsap.fromTo(
-          '.faq-item',
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 75%',
-            },
-          }
-        )
-      }, sectionRef)
-    })
-    return () => ctx?.revert()
-  }, [])
+  useScrollReveal(sectionRef)
 
   const faqs = [
     {
@@ -1164,7 +1034,7 @@ function FAQ() {
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="faq-item rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors hover:border-yellow-brand/20"
+            className="scroll-reveal faq-item rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors hover:border-yellow-brand/20"
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}

@@ -143,13 +143,33 @@ body::before {
   outline-offset: 2px;
 }
 
-/* ─── GSAP initial hidden states ─────────────────────────────────────────────── */
-.gsap-hidden {
+/* ─── Scroll-reveal animations (replaces GSAP ScrollTrigger) ─────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* ─── Hero CSS animation (replaces GSAP for faster LCP) ────────────────────── */
+.scroll-reveal.visible {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger children: each child delays slightly more */
+.scroll-reveal-stagger > .scroll-reveal.visible {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.scroll-reveal-stagger > .scroll-reveal:nth-child(1).visible { animation-delay: 0s; }
+.scroll-reveal-stagger > .scroll-reveal:nth-child(2).visible { animation-delay: 0.1s; }
+.scroll-reveal-stagger > .scroll-reveal:nth-child(3).visible { animation-delay: 0.2s; }
+.scroll-reveal-stagger > .scroll-reveal:nth-child(4).visible { animation-delay: 0.3s; }
+.scroll-reveal-stagger > .scroll-reveal:nth-child(5).visible { animation-delay: 0.4s; }
+.scroll-reveal-stagger > .scroll-reveal:nth-child(6).visible { animation-delay: 0.5s; }
+
+/* ─── Hero CSS animation ──────────────────────────────────────────────────── */
 @keyframes heroFadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
