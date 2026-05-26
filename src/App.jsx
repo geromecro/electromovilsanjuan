@@ -660,8 +660,9 @@ function Features() {
           { icon: Wrench, label: 'Arranques' },
           { icon: Lightbulb, label: 'Ópticas y Faros' },
           { icon: Lightbulb, label: 'Lámparas' },
-        ].map((p) => {
+        ].map((p, idx, arr) => {
           const Icon = p.icon
+          const isLastOdd = idx === arr.length - 1 && arr.length % 2 !== 0
           return (
             <a
               key={p.label}
@@ -669,7 +670,7 @@ function Features() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={trackWhatsAppConversion}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-6 px-4 hover:border-yellow-brand/40 hover:bg-yellow-brand/5 transition-all"
+              className={`group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-6 px-4 hover:border-yellow-brand/40 hover:bg-yellow-brand/5 transition-all${isLastOdd ? ' col-span-2 md:col-span-1 max-w-[50%] mx-auto md:max-w-none md:mx-0 w-full' : ''}`}
             >
               <Icon size={32} className="text-yellow-brand group-hover:scale-110 transition-transform" strokeWidth={1.5} />
               <span className="text-ivory/80 font-medium text-sm md:text-base group-hover:text-ivory transition-colors">{p.label}</span>
