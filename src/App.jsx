@@ -353,7 +353,7 @@ function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="max-w-3xl">
+            <h1 className="hero-fade-title max-w-3xl" style={{animationDelay: '0.36s'}}>
               <div className="font-heading font-medium text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight tracking-tight">
                 Repuestos del automotor
               </div>
