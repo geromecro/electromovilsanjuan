@@ -343,10 +343,13 @@ function Hero() {
         <div className="grid md:grid-cols-[1fr_1fr] gap-10 md:gap-16 items-end">
           {/* Left column */}
           <div>
-            {/* Badge */}
-            <div className="hero-fade-in inline-flex items-center gap-2 border-yellow-subtle rounded-full px-4 py-1.5 mb-6 glass-dark" style={{animationDelay: '0.3s'}}>
-              <span className="w-2 h-2 rounded-full bg-yellow-brand pulse-dot" />
-              <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">+40 Años de Trayectoria</span>
+            {/* Trust badge — Google reviews */}
+            <div className="hero-fade-in inline-flex items-center gap-2.5 border-yellow-subtle rounded-full px-4 py-2 mb-6 glass-dark" style={{animationDelay: '0.3s'}}>
+              <span className="text-yellow-brand text-base leading-none">★★★★★</span>
+              <span className="font-bold text-sm text-white">4.6</span>
+              <span className="text-ivory/40 text-xs">en Google</span>
+              <span className="w-1 h-1 rounded-full bg-ivory/30" />
+              <span className="text-ivory/60 text-xs">+200 reseñas</span>
             </div>
 
             {/* Headline */}
@@ -360,7 +363,7 @@ function Hero() {
             </h1>
 
             {/* Subline */}
-            <div className="hero-fade-in mt-6 flex items-center gap-3 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
+            <div className="hero-fade-in mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
               <span>Calidad</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
               <span>Asesoramiento</span>
