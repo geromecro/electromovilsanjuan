@@ -364,11 +364,11 @@ function Hero() {
 
             {/* Subline — solo desktop */}
             <div className="hero-fade-in hidden md:flex items-center gap-x-3 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase mt-6" style={{animationDelay: '0.42s'}}>
-              <span>Calidad</span>
+              <span>Financiación</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
-              <span>Asesoramiento</span>
+              <span>Entrega inmediata</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
-              <span>Compromiso</span>
+              <span>Variedad</span>
             </div>
 
             {/* CTAs */}
