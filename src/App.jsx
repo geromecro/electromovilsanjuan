@@ -850,6 +850,23 @@ function Testimonials() {
           Ver las 173 reseñas en Google <ChevronRight size={14} />
         </a>
       </div>
+
+      {/* CTA post-reseñas */}
+      <div className="text-center mt-14 pt-10 border-t border-white/[0.06]">
+        <p className="text-ivory/50 text-sm mb-5">¿Listo para ser el próximo cliente satisfecho?</p>
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={trackWhatsAppConversion}
+          className="btn-magnetic inline-flex items-center gap-3 bg-yellow-brand text-black font-bold px-8 py-4 rounded-full text-base whitespace-nowrap"
+        >
+          <span className="btn-bg-slide bg-yellow-light rounded-full" />
+          <MessageCircle size={18} className="relative z-10 shrink-0" />
+          <span className="relative z-10">Consultanos por WhatsApp</span>
+          <ChevronRight size={16} className="relative z-10 shrink-0" />
+        </a>
+      </div>
     </section>
   )
 }
@@ -947,6 +964,22 @@ function ProductGallery() {
             </div>
           </a>
         ))}
+      </div>
+
+      {/* CTA post-productos */}
+      <div className="text-center mt-14 pt-10 border-t border-white/[0.06]">
+        <p className="text-ivory/50 text-sm mb-5">¿No encontrás lo que buscás? Consultanos directamente.</p>
+        <a
+          href={WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={trackWhatsAppConversion}
+          className="btn-magnetic inline-flex items-center gap-3 border border-ivory/25 text-ivory hover:border-yellow-brand/60 hover:text-yellow-brand transition-colors px-8 py-4 rounded-full text-base whitespace-nowrap"
+        >
+          <MessageCircle size={18} className="shrink-0" />
+          <span>Consultar por WhatsApp</span>
+          <ChevronRight size={16} className="shrink-0" />
+        </a>
       </div>
     </section>
   )
