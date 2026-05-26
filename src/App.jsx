@@ -362,8 +362,8 @@ function Hero() {
               </div>
             </h1>
 
-            {/* Subline */}
-            <div className="hero-fade-in mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase" style={{animationDelay: '0.42s'}}>
+            {/* Subline — solo desktop */}
+            <div className="hero-fade-in hidden md:flex items-center gap-x-3 text-ivory/50 text-sm md:text-base font-normal tracking-widest uppercase mt-6" style={{animationDelay: '0.42s'}}>
               <span>Calidad</span>
               <span className="w-1 h-1 rounded-full bg-yellow-brand" />
               <span>Asesoramiento</span>
@@ -372,19 +372,19 @@ function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="hero-fade-in flex flex-wrap gap-4 mt-10" style={{animationDelay: '0.54s'}}>
+            <div className="hero-fade-in flex flex-wrap gap-4 mt-7 md:mt-10" style={{animationDelay: '0.54s'}}>
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-cta-primary"
                 onClick={trackWhatsAppConversion}
-                className="btn-magnetic inline-flex items-center gap-3 bg-yellow-brand text-black font-bold px-8 py-4 rounded-full text-base"
+                className="btn-magnetic inline-flex items-center gap-2 md:gap-3 bg-yellow-brand text-black font-bold px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base whitespace-nowrap"
               >
                 <span className="btn-bg-slide bg-yellow-light rounded-full" />
-                <MessageCircle size={18} className="relative z-10" />
+                <MessageCircle size={16} className="relative z-10 shrink-0" />
                 <span className="relative z-10">Consultanos por WhatsApp</span>
-                <ChevronRight size={16} className="relative z-10" />
+                <ChevronRight size={15} className="relative z-10 shrink-0" />
               </a>
             </div>
           </div>
