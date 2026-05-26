@@ -24,6 +24,7 @@ export default {
         heading: ['"Montserrat"', 'sans-serif'],
         drama: ['"Montserrat"', 'sans-serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        display: ['"Oswald"', 'sans-serif'],
       },
       borderRadius: {
         '2xl': '1rem',

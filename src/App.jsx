@@ -1,6 +1,42 @@
 import { useEffect, useRef, useState } from 'react'
 import { Battery, Zap, Lightbulb, Wrench, Phone, Mail, MapPin, ChevronRight, MessageCircle, Package, CreditCard, Cog, SearchCheck, ShieldCheck, Clock, Truck, HardHat } from 'lucide-react'
 
+function StatCounter({ target, decimals = 0, prefix = '', suffix = '' }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true
+          observer.disconnect()
+          const duration = 1500
+          const start = performance.now()
+          const animate = (now) => {
+            const elapsed = now - start
+            const progress = Math.min(elapsed / duration, 1)
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setCount(+(target * eased).toFixed(decimals))
+            if (progress < 1) requestAnimationFrame(animate)
+          }
+          requestAnimationFrame(animate)
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target, decimals])
+
+  return (
+    <span ref={ref}>{prefix}{count.toFixed(decimals)}{suffix}</span>
+  )
+}
+
 function useScrollReveal(ref, threshold = 0.2) {
   useEffect(() => {
     const el = ref.current
@@ -291,7 +327,7 @@ function Hero() {
       ref={heroRef}
       className="relative min-h-[100dvh] flex items-end pb-24 md:pb-32 overflow-hidden"
       style={{
-        backgroundImage: `url('/hero-alternator.webp')`,
+        backgroundImage: `url('/hero-parts.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: '40% 92%',
       }}
@@ -372,13 +408,15 @@ function Hero() {
             {/* Stats Row — below list */}
             <div className="relative z-10 flex gap-12 mt-10">
               {[
-                { n: '+150', label: 'Reseñas' },
-                { n: '+100', label: 'Productos' },
-                { n: '+30', label: 'Marcas' },
+                { target: 40,  decimals: 0, prefix: '+', suffix: '', label: 'Años de experiencia' },
+                { target: 150, decimals: 0, prefix: '+', suffix: '', label: 'Productos en stock' },
+                { target: 173, decimals: 0, prefix: '+', suffix: '', label: 'Reseñas en Google' },
               ].map((s) => (
                 <div key={s.label}>
-                  <div className="font-mono font-bold text-4xl text-yellow-brand">{s.n}</div>
-                  <div className="text-ivory/60 text-xs uppercase tracking-widest mt-1">{s.label}</div>
+                  <div className="font-display font-bold text-6xl text-white leading-none">
+                    <StatCounter target={s.target} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />
+                  </div>
+                  <div className="text-ivory/60 text-xs uppercase tracking-widest mt-2">{s.label}</div>
                 </div>
               ))}
             </div>
