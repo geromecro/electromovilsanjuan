@@ -372,7 +372,7 @@ function Hero() {
             </div>
 
             {/* CTAs */}
-            <div className="hero-fade-in flex flex-wrap gap-4 mt-7 md:mt-10" style={{animationDelay: '0.54s'}}>
+            <div className="hero-fade-in flex flex-wrap gap-3 md:gap-4 mt-7 md:mt-10" style={{animationDelay: '0.54s'}}>
               <a
                 href={WHATSAPP}
                 target="_blank"
@@ -385,6 +385,13 @@ function Hero() {
                 <MessageCircle size={16} className="relative z-10 shrink-0" />
                 <span className="relative z-10">Consultanos por WhatsApp</span>
                 <ChevronRight size={15} className="relative z-10 shrink-0" />
+              </a>
+              <a
+                href="#products"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 md:gap-3 border border-ivory/25 text-ivory hover:border-yellow-brand/60 hover:text-yellow-brand transition-colors px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm md:text-base whitespace-nowrap"
+              >
+                <span>Ver productos</span>
+                <ChevronRight size={15} className="shrink-0" />
               </a>
             </div>
           </div>
