@@ -60,13 +60,11 @@ function useScrollReveal(ref, threshold = 0.2) {
 }
 
 const WHATSAPP = 'https://wa.me/5492646227950'
-const TYPEWRITER_MESSAGES = [
-  'Batería 12V/100Ah — Stock disponible',
-  'Alternador Bosch 90A — Garantía 1 año',
-  'Arranque Ford Falcon — Revisado y listo',
-  '+30 marcas en depósito',
-  'Envio mismo día — S/C consulte',
-  'Disponibilidad inmediata confirmada',
+const CHAT_PAIRS = [
+  { q: '¿Tenés batería Moura 12×75?',       a: 'Sí, tenemos stock. ¿Te lo reservo?' },
+  { q: '¿Hacen diagnóstico gratis?',          a: 'Sí, en 5 minutos y sin costo.' },
+  { q: '¿Cuánto sale un alternador Bosch?',   a: 'Varios modelos disponibles. Precio por WhatsApp.' },
+  { q: '¿Arranque para Ford Falcon?',         a: 'Stock disponible. Entrega inmediata.' },
 ]
 const ATTR_QUERY_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'wbraid', 'gbraid', 'fbclid']
 const ATTR_STORAGE_KEY = 'emsj_attribution_v1'
@@ -508,46 +506,55 @@ function ShufflerCard() {
 
 // Card 2: Typewriter — Live repuestos feed
 function TypewriterCard() {
-  const [msgIndex, setMsgIndex] = useState(0)
-  const [displayed, setDisplayed] = useState('')
-  const [charIndex, setCharIndex] = useState(0)
+  const [pairIndex, setPairIndex] = useState(0)
+  const [showQ, setShowQ] = useState(false)
+  const [showA, setShowA] = useState(false)
 
   useEffect(() => {
-    const current = TYPEWRITER_MESSAGES[msgIndex]
-    if (charIndex < current.length) {
-      const t = setTimeout(() => {
-        setDisplayed(current.slice(0, charIndex + 1))
-        setCharIndex((c) => c + 1)
-      }, 45)
-      return () => clearTimeout(t)
-    } else {
-      const t = setTimeout(() => {
-        setMsgIndex((m) => (m + 1) % TYPEWRITER_MESSAGES.length)
-        setDisplayed('')
-        setCharIndex(0)
-      }, 2000)
-      return () => clearTimeout(t)
+    let cancelled = false
+    const run = async () => {
+      if (cancelled) return
+      setShowQ(false)
+      setShowA(false)
+      await delay(600)
+      if (cancelled) return
+      setShowQ(true)
+      await delay(1400)
+      if (cancelled) return
+      setShowA(true)
+      await delay(2800)
+      if (cancelled) return
+      setPairIndex(i => (i + 1) % CHAT_PAIRS.length)
     }
-  }, [charIndex, msgIndex])
+    run()
+    return () => { cancelled = true }
+  }, [pairIndex])
+
+  const pair = CHAT_PAIRS[pairIndex]
 
   return (
     <div className="card-surface rounded-4xl p-7 flex flex-col gap-4">
       <div className="flex items-center gap-2 mb-2">
-        <span className="w-2 h-2 rounded-full bg-yellow-brand pulse-dot" />
-        <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">Live Feed</span>
+        <span className="w-1.5 h-1.5 bg-green-400 rounded-full pulse-dot" />
+        <span className="font-mono text-xs text-ivory/60 uppercase tracking-widest">Consulta rápida</span>
       </div>
       <h3 className="font-heading font-bold text-xl text-ivory">Repuestos Inmediatos</h3>
       <p className="text-ivory/60 text-sm">+30 marcas. Disponibilidad al instante. Sin esperas.</p>
-      <div className="mt-2 bg-black/60 rounded-2xl p-4 border border-white/5 min-h-[80px]">
-        <div className="font-mono text-xs text-yellow-brand/60 mb-2">$ stock_check --live</div>
-        <div className="font-mono text-sm text-ivory leading-relaxed">
-          {displayed}
-          <span className="cursor-blink text-yellow-brand">▌</span>
+      <div className="mt-2 flex flex-col gap-3 min-h-[88px] justify-center">
+        <div className={`flex justify-end transition-all duration-500 ${showQ ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+          <div className="bg-yellow-brand/15 border border-yellow-brand/20 text-ivory text-sm px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[85%]">
+            {pair.q}
+          </div>
+        </div>
+        <div className={`flex justify-start transition-all duration-500 ${showA ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+          <div className="bg-white/[0.06] border border-white/[0.08] text-ivory/90 text-sm px-4 py-2.5 rounded-2xl rounded-tl-sm max-w-[85%]">
+            {pair.a}
+          </div>
         </div>
       </div>
       <div className="flex items-center gap-2 mt-1">
         <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-        <span className="font-mono text-xs text-ivory/50">Sistema activo</span>
+        <span className="font-mono text-xs text-ivory/50">Respondemos por WhatsApp</span>
       </div>
     </div>
   )
