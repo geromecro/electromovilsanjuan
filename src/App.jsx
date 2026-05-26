@@ -734,24 +734,21 @@ function Philosophy() {
           </h2>
 
           <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
-            Electromóvil San Juan es una empresa autopartista con más de 40 años
-            de trayectoria, fundada en 1985. Desde nuestro local en Av. Guillermo Rawson 158 Sur,
-            en pleno centro de San Juan, atendemos a miles de clientes que confían
-            en nuestra experiencia y variedad de stock.
+            Empresa autopartista fundada en 1985. Desde Av. Guillermo Rawson 158 Sur
+            atendemos a miles de clientes que confían en nuestra experiencia y variedad de stock.
           </div>
-          <div className="scroll-reveal manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
-            Contamos con el más completo surtido de repuestos eléctricos del automotor
-            en la provincia: baterías de las marcas Moura, Reymax y Sermat,
-            alternadores, motores de arranque, lámparas LED y halógenas, ópticas
-            completas y equipamiento eléctrico para minería. Nuestro compromiso
-            es ofrecer productos de calidad con asesoramiento técnico real.
-          </div>
-          <div className="scroll-reveal manifesto-line mt-4 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
-            Lo que nos diferencia es nuestro servicio integral: diagnóstico gratuito
-            de baterías en 5 minutos, reparación de arranques y alternadores en
-            nuestro propio taller con garantía de trabajo, y un equipo que conoce
-            cada pieza porque lleva décadas en el rubro. No solo vendemos repuestos
-            — te ayudamos a encontrar la solución correcta para tu vehículo.
+          <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
+            {[
+              { icon: Package,     text: 'Stock completo: Moura, Reymax, Sermat, alternadores, arranques y más' },
+              { icon: SearchCheck, text: 'Diagnóstico gratuito de baterías en 5 minutos' },
+              { icon: Wrench,      text: 'Reparación en taller propio con garantía de trabajo' },
+              { icon: Clock,       text: 'Más de 40 años de experiencia en el rubro' },
+            ].map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-start gap-3">
+                <Icon size={18} className="text-yellow-brand mt-0.5 shrink-0" strokeWidth={1.5} />
+                <span className="text-ivory/70 text-sm md:text-base leading-snug">{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -943,7 +940,7 @@ function ProductGallery() {
               <h3 className="font-heading font-bold text-xl text-ivory group-hover:text-yellow-brand transition-colors">
                 {product.name}
               </h3>
-              <p className="text-ivory/60 text-sm mt-2 leading-relaxed font-normal">{product.desc}</p>
+              <p className="text-ivory/60 text-sm mt-2 leading-relaxed font-normal line-clamp-3 md:line-clamp-none">{product.desc}</p>
               <div className="mt-4 inline-flex items-center gap-2 text-yellow-brand font-mono text-sm group-hover:gap-3 transition-all">
                 Consultar <ChevronRight size={14} />
               </div>
