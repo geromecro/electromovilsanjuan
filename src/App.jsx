@@ -33,7 +33,7 @@ function StatCounter({ target, decimals = 0, prefix = '', suffix = '' }) {
   }, [target, decimals])
 
   return (
-    <span ref={ref}>{prefix}{count.toFixed(decimals)}{suffix}</span>
+    <span ref={ref}>{prefix}{count.toLocaleString('es-AR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}{suffix}</span>
   )
 }
 
@@ -408,9 +408,9 @@ function Hero() {
             {/* Stats Row — below list */}
             <div className="relative z-10 flex gap-12 mt-10">
               {[
-                { target: 40,  decimals: 0, prefix: '+', suffix: '', label: 'Años de experiencia' },
-                { target: 150, decimals: 0, prefix: '+', suffix: '', label: 'Productos en stock' },
-                { target: 173, decimals: 0, prefix: '+', suffix: '', label: 'Reseñas en Google' },
+                { target: 50,    decimals: 0, prefix: '+', suffix: '', label: 'Años de experiencia' },
+                { target: 10000, decimals: 0, prefix: '+', suffix: '', label: 'Productos en stock' },
+                { target: 200,   decimals: 0, prefix: '+', suffix: '', label: 'Reseñas en Google' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-display font-bold text-6xl text-white leading-none">
