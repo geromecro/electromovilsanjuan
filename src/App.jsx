@@ -734,7 +734,7 @@ function Philosophy() {
           </h2>
 
           <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
-            Empresa autopartista fundada en 1985. Desde Av. Guillermo Rawson 158 Sur
+            Empresa autopartista fundada en 1976. Desde Av. Guillermo Rawson 158 Sur
             atendemos a miles de clientes que confían en nuestra experiencia y variedad de stock.
           </div>
           <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
