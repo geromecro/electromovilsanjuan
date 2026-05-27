@@ -424,7 +424,7 @@ function Hero() {
                   <div className="font-display font-bold text-6xl text-white leading-none">
                     <StatCounter target={s.target} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />
                   </div>
-                  <div className="text-ivory/60 text-xs uppercase tracking-widest mt-2">{s.label}</div>
+                  <div className="font-display text-ivory/60 text-xs uppercase tracking-widest mt-2">{s.label}</div>
                 </div>
               ))}
             </div>
