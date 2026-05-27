@@ -289,7 +289,7 @@ function Navbar() {
 
       {/* Mobile Dropdown */}
       {menuOpen && (
-        <div className="absolute top-full mt-3 left-0 right-0 glass-dark border-subtle rounded-3xl p-4 flex flex-col gap-3 md:hidden">
+        <div className="absolute top-full mt-3 left-0 right-0 bg-[#0D0D0D] border border-white/10 rounded-3xl p-4 flex flex-col gap-3 md:hidden">
           {links.map((l) => (
             <a
               key={l.label}
