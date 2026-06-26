@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baterías en San Juan | Moura · Reymax · Sermat | Diagnóstico Gratis</title>
+    <meta
+      name="description"
+      content="Baterías en San Juan con stock y garantía: Moura, Reymax y Sermat para auto, camioneta y utilitario. Diagnóstico gratis en 5 min. Llamá al (264) 422-3645 o WhatsApp."
+    />
+    <link rel="canonical" href="https://electromovilsanjuan.com/baterias-san-juan/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://electromovilsanjuan.com/baterias-san-juan/" />
+    <meta property="og:title" content="Baterias en San Juan | Electromovil" />
+    <meta
+      property="og:description"
+      content="Guia practica para elegir bateria en San Juan segun clima, uso y garantia."
+    />
+    <meta property="og:image" content="https://electromovilsanjuan.com/og-image.png" />
+    <style>
+      :root {
+        --bg: #0b0b0b;
+        --panel: #141414;
+        --text: #f4f1e8;
+        --muted: #c6c1b2;
+        --line: #2b2b2b;
+        --brand: #fbc92d;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+      }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
+      .panel {
+        background: linear-gradient(180deg, #191919 0%, #101010 100%);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 28px;
+      }
+      h1, h2, h3 { line-height: 1.2; margin: 0 0 14px; }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.55rem; margin-top: 30px; }
+      h3 { font-size: 1.1rem; margin-top: 18px; }
+      p { margin: 0 0 14px; color: var(--muted); }
+      strong { color: var(--text); }
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #0b0b0b;
+        background: var(--brand);
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 8px 12px;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 8px;
+        background: var(--brand);
+        color: #111;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 999px;
+      }
+      ul { margin: 0 0 14px; padding-left: 20px; color: var(--muted); }
+      li { margin-bottom: 8px; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .footer-links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .footer-links a { color: var(--brand); }
+      a { color: var(--brand); }
+      table { width: 100%; border-collapse: collapse; margin: 0 0 10px; font-size: 0.95rem; }
+      th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
+      th { color: var(--text); font-weight: 700; }
+      .note { font-size: 0.85rem; color: #8a857a; }
+      .updated { font-size: 0.8rem; color: #8a857a; margin: -6px 0 16px; }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://electromovilsanjuan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Baterías en San Juan", "item": "https://electromovilsanjuan.com/baterias-san-juan/" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://electromovilsanjuan.com/baterias-san-juan/#webpage",
+            "url": "https://electromovilsanjuan.com/baterias-san-juan/",
+            "name": "Baterias en San Juan | Electromovil",
+            "description": "Guia para elegir baterias en San Juan para auto y camioneta.",
+            "inLanguage": "es-AR",
+            "dateModified": "2026-06-25",
+            "isPartOf": { "@id": "https://electromovilsanjuan.com/#website" },
+            "about": { "@id": "https://electromovilsanjuan.com/#organization" }
+          },
+          {
+            "@type": "AutoPartsStore",
+            "@id": "https://electromovilsanjuan.com/#organization",
+            "name": "Electromovil San Juan",
+            "url": "https://electromovilsanjuan.com",
+            "logo": "https://electromovilsanjuan.com/logo.webp",
+            "image": "https://electromovilsanjuan.com/hero-alternator.webp",
+            "description": "Empresa autopartista con mas de 40 anos de trayectoria. El mas completo stock de repuestos del automotor en San Juan.",
+            "telephone": "+54-264-422-3645",
+            "currenciesAccepted": "ARS",
+            "paymentAccepted": "Efectivo, Transferencia, Tarjeta de credito, Tarjeta de debito",
+            "areaServed": { "@type": "State", "name": "San Juan", "containedInPlace": { "@type": "Country", "name": "Argentina" } },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Guillermo Rawson 158 Sur",
+              "addressLocality": "San Juan",
+              "addressRegion": "San Juan",
+              "addressCountry": "AR",
+              "postalCode": "5400"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": -31.5375, "longitude": -68.5364 },
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "13:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:30", "closes": "20:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+            ],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.6, "reviewCount": 201, "bestRating": 5, "worstRating": 1 },
+            "sameAs": [
+              "https://www.instagram.com/electromovilsanjuan/",
+              "https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z/data=!3m1!4b1!4m6!3m5!1s0x96816a85cd8d9f15:0xe18bcfafa1dcfb6e!8m2!3d-31.5353497!4d-68.5147027!16s%2Fg%2F11g6xwv814"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Cuanto dura una bateria en San Juan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "En promedio entre 2 y 4 anos, pero el calor extremo de San Juan puede reducir ese plazo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Que marcas de baterias trabajan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Moura, Reymax y Sermat para autos, camionetas, utilitarios y otros vehiculos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Hacen diagnostico antes de cambiar la bateria?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si, realizan diagnostico gratuito en aproximadamente 5 minutos para revisar bateria, arranque y alternador."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como se que medida de bateria necesito?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La medida depende del modelo y motor del vehiculo. Como referencia, los autos chicos suelen usar baterias de 12V 40-50Ah, los autos medianos 50-65Ah y las camionetas y utilitarios 65-100Ah. Lo mas seguro es confirmar la medida exacta con el dato del vehiculo; te asesoramos sin cargo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Tienen baterias Moura en San Juan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si. Moura es una de las marcas lideres del mercado y trabajamos sus lineas para auto, camioneta y utilitario, con garantia de fabrica."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Cuanto cuesta una bateria en San Juan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El precio depende de la capacidad (Ah), la marca y la garantia. Como vendemos varias marcas y medidas, lo mejor es pedir el precio actualizado por WhatsApp o telefono indicando tu vehiculo."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="wrap">
+      <article class="panel">
+        <span class="badge">Electromovil San Juan</span>
+        <h1>Baterias en San Juan: como elegir la correcta y evitar fallas</h1>
+        <p class="updated">Actualizado: junio de 2026</p>
+        <p>
+          Si estas buscando <strong>baterias en San Juan</strong> (o "acumuladores", como tambien se
+          las conoce), la decision no pasa solo por precio. El clima local, el uso diario y el estado
+          del sistema de carga cambian por completo la vida util de una bateria. En Electromovil San
+          Juan trabajamos con las marcas lideres y hacemos <strong>diagnostico gratuito</strong> para
+          que compres la bateria correcta.
+        </p>
+        <a class="cta" href="https://wa.me/5492646227950?text=Hola%2C%20quiero%20consultar%20por%20baterias%20en%20San%20Juan" rel="noopener noreferrer" target="_blank">Consultar por WhatsApp</a>
+
+        <h2>Marcas y tipos de baterias que mas se buscan</h2>
+        <div class="grid">
+          <section class="card">
+            <h3>Moura</h3>
+            <p>Excelente respuesta de arranque y buena durabilidad para uso urbano y rutas.</p>
+          </section>
+          <section class="card">
+            <h3>Reymax</h3>
+            <p>Alternativa confiable para quienes buscan equilibrio entre rendimiento y costo.</p>
+          </section>
+          <section class="card">
+            <h3>Sermat</h3>
+            <p>Linea robusta para diferentes segmentos y vehiculos de trabajo.</p>
+          </section>
+        </div>
+
+        <h2>Baterias Moura en San Juan</h2>
+        <p>
+          Moura es una de las marcas mas elegidas del mercado argentino por su respuesta de arranque
+          y su durabilidad. Trabajamos sus lineas para <strong>autos, camionetas y utilitarios</strong>,
+          tanto para uso urbano como para ruta y trabajo. Si buscas puntualmente una
+          <strong>bateria Moura en San Juan</strong>, te confirmamos el stock y la medida que
+          corresponde a tu vehiculo, con garantia de fabrica.
+        </p>
+
+        <h2>Que bateria necesito segun mi vehiculo</h2>
+        <p>
+          La medida y la capacidad (en amperios-hora, Ah) dependen del modelo y del motor. Esta tabla
+          sirve como <strong>referencia orientativa</strong>; la medida fisica y la polaridad tambien
+          importan, asi que conviene confirmar el dato exacto de tu vehiculo:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Tipo de vehiculo</th><th>Capacidad orientativa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Auto chico / naftero</td><td>12V &middot; 40-50 Ah</td></tr>
+            <tr><td>Auto mediano / familiar</td><td>12V &middot; 50-65 Ah</td></tr>
+            <tr><td>Camioneta / SUV</td><td>12V &middot; 65-90 Ah</td></tr>
+            <tr><td>Utilitario / diesel</td><td>12V &middot; 75-100 Ah</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Son rangos orientativos. Acercate o escribinos con el modelo de tu vehiculo y te confirmamos la medida exacta sin cargo.</p>
+
+        <h2>Senales comunes de bateria en mal estado</h2>
+        <ul>
+          <li>El motor tarda en arrancar o hace intentos repetidos.</li>
+          <li>Luces tenues o variaciones de intensidad al encender accesorios.</li>
+          <li>Indicador de bateria encendido en tablero.</li>
+          <li>Bateria con mas de 2 o 3 anos sin chequeo preventivo.</li>
+        </ul>
+
+        <h2>Por que en San Juan hay que anticiparse</h2>
+        <p>
+          Las temperaturas altas aceleran el desgaste interno. Por eso una bateria que en otro
+          clima duraria mas tiempo puede fallar antes aca. La mejor practica es chequearla antes
+          del verano y antes de viajes largos.
+        </p>
+
+        <h2>Proceso recomendado antes de comprar</h2>
+        <ul>
+          <li><strong>Paso 1:</strong> <a href="/diagnostico-bateria-san-juan/">Diagnostico gratuito</a> de bateria, alternador y arranque.</li>
+          <li><strong>Paso 2:</strong> Confirmar medida, capacidad y polaridad correctas.</li>
+          <li><strong>Paso 3:</strong> Comparar marcas segun uso real y presupuesto.</li>
+          <li><strong>Paso 4:</strong> Validar garantia y recomendaciones de mantenimiento.</li>
+        </ul>
+
+        <h2>Venta de baterias: donde comprar y a que precio</h2>
+        <p>
+          Para la <strong>venta de baterias en San Juan</strong> nos encontras en
+          <strong>Av. Guillermo Rawson 158 Sur</strong>, de lunes a viernes de 8:30 a 13:00 y de
+          16:30 a 20:00, y sabados de 9:00 a 13:00. Aceptamos efectivo, transferencia y tarjetas de
+          debito y credito.
+        </p>
+        <p>
+          El <strong>precio</strong> de una bateria depende de tres cosas: la capacidad (Ah), la
+          marca y la garantia, asi que no hay un valor unico. Si queres una referencia, mira nuestra
+          <a href="/precio-bateria-auto-san-juan/">guia de precios de bateria de auto</a>, o pedinos
+          el valor actualizado de tu medida por WhatsApp o al (0264) 422-3645. Ademas de baterias,
+          somos especialistas en <a href="/electricidad-del-automotor-san-juan/">electricidad del
+          automotor</a> y tenemos el stock completo de <a href="/repuestos-san-juan/">repuestos del
+          automotor</a>.
+        </p>
+
+        <h2>Preguntas frecuentes sobre baterias en San Juan</h2>
+        <h3>Cuanto dura una bateria?</h3>
+        <p>Entre 2 y 4 anos en promedio. Con calor extremo puede durar menos si no se controla periodicamente.</p>
+        <h3>Conviene cambiar la bateria sin revisar el alternador?</h3>
+        <p>No. Si el <a href="/electricidad-del-automotor-san-juan/">alternador</a> carga mal, la bateria nueva tambien se va a deteriorar rapido. Por eso el diagnostico incluye el sistema de carga completo.</p>
+        <h3>Tienen baterias para camionetas y utilitarios?</h3>
+        <p>Si. Hay opciones para autos, camionetas, utilitarios y otras aplicaciones, segun disponibilidad.</p>
+
+        <div class="footer-links">
+          <a href="/baterias-de-auto-san-juan/">Ver guia de baterias de auto</a>
+          <a href="/precio-bateria-auto-san-juan/">Ver guia de precios</a>
+          <a href="/electricidad-del-automotor-san-juan/">Electricidad del automotor</a>
+          <a href="/repuestos-san-juan/">Repuestos del automotor</a>
+          <a href="/">Volver al sitio principal</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
