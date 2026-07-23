@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Comparador de precios (NUNCA subir a GitHub)
+comparar.config.json
+.ml_token_cache.json

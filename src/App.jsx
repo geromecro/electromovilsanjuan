@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Battery, Zap, Lightbulb, Wrench, Phone, Mail, MapPin, ChevronRight, MessageCircle, Package, CreditCard, Cog, SearchCheck, ShieldCheck, Clock, Truck, HardHat } from 'lucide-react'
+import { Battery, Zap, Lightbulb, Wrench, Phone, Mail, MapPin, ChevronRight, MessageCircle, Package, CreditCard, Cog, SearchCheck, Clock, HardHat } from 'lucide-react'
+import { CarBattery, Lightning, Engine, Headlights, LightbulbFilament } from '@phosphor-icons/react'
+import Marquee from 'react-fast-marquee'
 
 function StatCounter({ target, decimals = 0, prefix = '', suffix = '' }) {
   const [count, setCount] = useState(0)
@@ -443,8 +445,44 @@ function Hero() {
   )
 }
 
+// ─── BRANDS ──────────────────────────────────────────────────────────────────
+const BRANDS = [
+  { name: 'Moura',    src: '/logos/moura.webp' },
+  { name: 'Pioneiro', src: '/logos/pioneiro.webp' },
+  { name: 'Reymax',   src: '/logos/reymax.webp' },
+  { name: 'Sermat',   src: '/logos/sermat.webp' },
+  { name: 'NGK',      src: '/logos/ngk.webp' },
+  { name: 'Bosch',    src: '/logos/bosch.webp' },
+  { name: 'Valeo',    src: '/logos/valeo.webp' },
+  { name: 'Tamatel',  src: '/logos/tamatel.webp' },
+  { name: 'SKF',      src: '/logos/skf.webp' },
+]
+
+function Brands() {
+  return (
+    <section className="py-12 overflow-hidden border-y border-white/[0.05]" style={{ background: '#0A0A0A' }}>
+      <p className="text-center font-mono text-xs text-ivory/30 uppercase tracking-widest mb-10">
+        Marcas que trabajamos
+      </p>
+      <Marquee speed={35} gradient gradientColor="#0A0A0A" gradientWidth={100} pauseOnHover autoFill>
+        {BRANDS.map(brand => (
+          <div key={brand.name} className="mx-4">
+            <div className="bg-white rounded-2xl px-6 py-3 flex items-center h-16 opacity-70 hover:opacity-100 transition-all duration-300 shadow-sm">
+              <img
+                src={brand.src}
+                alt={brand.name}
+                className="h-8 w-auto max-w-[130px] object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        ))}
+      </Marquee>
+    </section>
+  )
+}
+
 // ─── FEATURES ──────────────────────────────────────────────────────────────────
-// Card 1: Diagnostic Shuffler — Battery / Alternator / Starter
 function ShufflerCard() {
   const [items, setItems] = useState([
     { icon: Battery, label: 'Batería', status: 'Diagnóstico en 5 min', color: 'text-yellow-brand' },
@@ -504,7 +542,6 @@ function ShufflerCard() {
   )
 }
 
-// Card 2: Typewriter — Live repuestos feed
 function TypewriterCard() {
   const [pairIndex, setPairIndex] = useState(0)
   const [showQ, setShowQ] = useState(false)
@@ -560,20 +597,19 @@ function TypewriterCard() {
   )
 }
 
-// Card 3: Scheduler — Weekly appointment grid
 function SchedulerCard() {
   const days = ['D', 'L', 'M', 'X', 'J', 'V', 'S']
   const [activeDay, setActiveDay] = useState(null)
   const [saved, setSaved] = useState(false)
-  const [step, setStep] = useState(0) // 0=idle, 1=selecting, 2=saving, 3=done
+  const [step, setStep] = useState(0)
 
   useEffect(() => {
     const sequence = async () => {
       await delay(1000)
       setStep(1)
-      setActiveDay(1) // Monday
+      setActiveDay(1)
       await delay(800)
-      setActiveDay(3) // Wednesday
+      setActiveDay(3)
       await delay(800)
       setStep(2)
       await delay(600)
@@ -596,32 +632,20 @@ function SchedulerCard() {
       </div>
       <h3 className="font-heading font-bold text-xl text-ivory">Reparación de Arranques y Alternadores</h3>
       <p className="text-ivory/60 text-sm">Servicio técnico especializado. Agendá tu turno fácil.</p>
-
-      {/* Week grid */}
       <div className="grid grid-cols-7 gap-2 mt-2">
         {days.map((d, i) => (
           <div
             key={d}
-            className={`flex flex-col items-center gap-1.5 py-2 rounded-xl transition-all duration-500 ${activeDay === i
-                ? 'bg-yellow-brand scale-95'
-                : 'bg-black/40 border border-white/5'
-              }`}
+            className={`flex flex-col items-center gap-1.5 py-2 rounded-xl transition-all duration-500 ${activeDay === i ? 'bg-yellow-brand scale-95' : 'bg-black/40 border border-white/5'}`}
           >
             <span className={`text-xs font-mono ${activeDay === i ? 'text-black font-bold' : 'text-ivory/50'}`}>{d}</span>
             <div className={`w-1.5 h-1.5 rounded-full ${activeDay === i ? 'bg-black' : 'bg-white/10'}`} />
           </div>
         ))}
       </div>
-
-      {/* Save button */}
       <button
         onClick={() => openTrackedWhatsApp(`${WHATSAPP}?text=Quiero%20agendar%20un%20turno`, 'scheduler-agendar-turno')}
-        className={`mt-2 py-2.5 min-h-[44px] rounded-full font-heading font-bold text-sm transition-all duration-500 ${saved
-            ? 'bg-green-500 text-white scale-95'
-            : step === 2
-              ? 'bg-yellow-brand/50 text-black/50 scale-95'
-              : 'bg-yellow-brand text-black hover:bg-yellow-light'
-          }`}
+        className={`mt-2 py-2.5 min-h-[44px] rounded-full font-heading font-bold text-sm transition-all duration-500 ${saved ? 'bg-green-500 text-white scale-95' : step === 2 ? 'bg-yellow-brand/50 text-black/50 scale-95' : 'bg-yellow-brand text-black hover:bg-yellow-light'}`}
       >
         {saved ? '✓ Turno agendado' : 'Agendar Turno'}
       </button>
@@ -639,17 +663,10 @@ function Features() {
 
   return (
     <section id="features" ref={sectionRef} className="relative py-28 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-      {/* Subtle product texture */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `url('/alternator-exploded.jpg')`,
-          backgroundSize: '600px auto',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        style={{ backgroundImage: `url('/alternator-exploded.jpg')`, backgroundSize: '600px auto', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
       />
-      {/* Section header */}
       <div className="mb-16 text-center">
         <span className="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Nuestros Servicios</span>
         <h2 className="font-heading font-bold text-4xl md:text-5xl text-ivory mt-3">
@@ -658,15 +675,13 @@ function Features() {
           <span className="text-gradient-yellow">necesita</span>
         </h2>
       </div>
-
-      {/* Product categories */}
       <div className="mb-16 grid grid-cols-2 md:grid-cols-5 gap-4">
         {[
-          { icon: Battery, label: 'Baterías' },
-          { icon: Zap, label: 'Alternadores' },
-          { icon: Wrench, label: 'Arranques' },
-          { icon: Lightbulb, label: 'Ópticas y Faros' },
-          { icon: Lightbulb, label: 'Lámparas' },
+          { icon: CarBattery, label: 'Baterías' },
+          { icon: Lightning, label: 'Alternadores' },
+          { icon: Engine, label: 'Arranques' },
+          { icon: Headlights, label: 'Ópticas y Faros' },
+          { icon: LightbulbFilament, label: 'Lámparas' },
         ].map((p, idx, arr) => {
           const Icon = p.icon
           const isLastOdd = idx === arr.length - 1 && arr.length % 2 !== 0
@@ -679,13 +694,12 @@ function Features() {
               onClick={trackWhatsAppConversion}
               className={`group flex flex-col items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] py-6 px-4 hover:border-yellow-brand/40 hover:bg-yellow-brand/5 transition-all${isLastOdd ? ' col-span-2 md:col-span-1 max-w-[50%] mx-auto md:max-w-none md:mx-0 w-full' : ''}`}
             >
-              <Icon size={32} className="text-yellow-brand group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+              <Icon size={32} weight="fill" className="text-yellow-brand group-hover:scale-110 transition-transform" />
               <span className="text-ivory/80 font-medium text-sm md:text-base group-hover:text-ivory transition-colors">{p.label}</span>
             </a>
           )
         })}
       </div>
-
       <div className="scroll-reveal-stagger grid md:grid-cols-3 gap-6">
         <div className="scroll-reveal feature-card order-3 md:order-1"><ShufflerCard /></div>
         <div className="scroll-reveal feature-card order-1 md:order-2"><TypewriterCard /></div>
@@ -723,32 +737,51 @@ function Philosophy() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-yellow-brand/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div ref={textRef} className="relative z-10 max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center">
-          <span className="scroll-reveal manifesto-line font-mono text-xs text-yellow-brand uppercase tracking-widest">// Quiénes Somos</span>
-
-          <h2 className="scroll-reveal manifesto-line mt-6 font-drama italic text-4xl md:text-6xl lg:text-7xl text-ivory leading-tight">
-            La solución integral
-            <br />
-            <span className="text-gradient-yellow">para tu vehículo.</span>
-          </h2>
-
-          <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto text-ivory/70 text-base md:text-lg leading-relaxed">
-            Empresa autopartista fundada en 1976. Desde Av. Guillermo Rawson 158 Sur
-            atendemos a miles de clientes que confían en nuestra experiencia y variedad de stock.
+        {/* Two-column: text left, photo right */}
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Text column */}
+          <div>
+            <span className="scroll-reveal manifesto-line font-mono text-xs text-yellow-brand uppercase tracking-widest">// Quiénes Somos</span>
+            <h2 className="scroll-reveal manifesto-line mt-6 font-drama italic text-4xl md:text-5xl lg:text-6xl text-ivory leading-tight">
+              La solución integral
+              <br />
+              <span className="text-gradient-yellow">para tu vehículo.</span>
+            </h2>
+            <p className="scroll-reveal manifesto-line mt-6 text-ivory/70 text-base md:text-lg leading-relaxed">
+              Empresa autopartista fundada en 1976. Desde Av. Guillermo Rawson 158 Sur
+              atendemos a miles de clientes que confían en nuestra experiencia y variedad de stock.
+            </p>
+            <div className="scroll-reveal manifesto-line mt-8 grid grid-cols-1 gap-3">
+              {[
+                { icon: Package,     text: 'Stock completo: Moura, Reymax, Sermat, alternadores, arranques y más' },
+                { icon: SearchCheck, text: 'Diagnóstico gratuito de baterías en 5 minutos' },
+                { icon: Wrench,      text: 'Reparación en taller propio con garantía de trabajo' },
+                { icon: Clock,       text: 'Más de 40 años de experiencia en el rubro' },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-start gap-3">
+                  <Icon size={18} className="text-yellow-brand mt-0.5 shrink-0" strokeWidth={1.5} />
+                  <span className="text-ivory/70 text-sm md:text-base leading-snug">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="scroll-reveal manifesto-line mt-8 max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
-            {[
-              { icon: Package,     text: 'Stock completo: Moura, Reymax, Sermat, alternadores, arranques y más' },
-              { icon: SearchCheck, text: 'Diagnóstico gratuito de baterías en 5 minutos' },
-              { icon: Wrench,      text: 'Reparación en taller propio con garantía de trabajo' },
-              { icon: Clock,       text: 'Más de 40 años de experiencia en el rubro' },
-            ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-start gap-3">
-                <Icon size={18} className="text-yellow-brand mt-0.5 shrink-0" strokeWidth={1.5} />
-                <span className="text-ivory/70 text-sm md:text-base leading-snug">{text}</span>
-              </div>
-            ))}
+
+          {/* Photo column */}
+          <div className="scroll-reveal manifesto-line">
+            <div className="relative rounded-2xl overflow-hidden max-h-[620px]">
+              <img
+                src="/fachada-v2.webp"
+                alt="Local de Electromóvil San Juan — Av. Guillermo Rawson 158 Sur"
+                className="w-full h-full object-cover object-center"
+                loading="lazy"
+                width="800"
+                height="1067"
+              />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-yellow-brand/20 pointer-events-none" />
+            </div>
+            <p className="text-ivory/40 text-xs mt-3 text-center tracking-wide">
+              Av. Guillermo Rawson 158 Sur, San Juan
+            </p>
           </div>
         </div>
 
@@ -1001,8 +1034,8 @@ function ProductGallery() {
   )
 }
 
-// ─── CTA SECTION ────────────────────────────────────────────────────────────────
-function CTASection() {
+// ─── CTA SECTION (removed) ───────────────────────────────────────────────────
+function CTASection_REMOVED() {
   const ref = useRef(null)
   useScrollReveal(ref)
 
@@ -1178,6 +1211,26 @@ function SeoLandingLinks() {
       desc: 'Factores que definen el precio y cómo evitar pagar de más.',
       href: '/precio-bateria-auto-san-juan/',
     },
+    {
+      title: 'Batería Moura en San Juan',
+      desc: 'Stock, garantía y asesoramiento sobre la marca líder del mercado.',
+      href: '/bateria-moura-san-juan/',
+    },
+    {
+      title: 'Diagnóstico de Batería Gratis',
+      desc: 'Cómo funciona el chequeo gratuito en 5 minutos y cuándo conviene hacerlo.',
+      href: '/diagnostico-bateria-san-juan/',
+    },
+    {
+      title: 'Electricidad del Automotor',
+      desc: 'Baterías, alternadores, arranques, luces e instalación eléctrica con taller propio.',
+      href: '/electricidad-del-automotor-san-juan/',
+    },
+    {
+      title: 'Repuestos del Automotor',
+      desc: 'La casa de repuestos más completa de San Juan: stock real y asesoramiento.',
+      href: '/repuestos-san-juan/',
+    },
   ]
 
   return (
@@ -1224,6 +1277,19 @@ function Footer() {
           <p className="text-ivory/50 text-sm leading-relaxed max-w-xs">
             Repuestos eléctricos del automotor con más de 40 años de trayectoria en San Juan.
           </p>
+          <nav aria-label="Guías" className="mt-5 flex flex-wrap gap-x-4 gap-y-2 max-w-md">
+            {[
+              { label: 'Baterías en San Juan', href: '/baterias-san-juan/' },
+              { label: 'Electricidad del automotor', href: '/electricidad-del-automotor-san-juan/' },
+              { label: 'Repuestos del automotor', href: '/repuestos-san-juan/' },
+              { label: 'Precio de batería de auto', href: '/precio-bateria-auto-san-juan/' },
+              { label: 'Batería Moura en San Juan', href: '/bateria-moura-san-juan/' },
+            ].map((l) => (
+              <a key={l.href} href={l.href} className="text-ivory/50 text-sm hover:text-yellow-brand nav-link">
+                {l.label}
+              </a>
+            ))}
+          </nav>
           <div className="mt-6 flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-400 pulse-dot" />
             <span className="font-mono text-xs text-ivory/50">SISTEMA OPERATIVO</span>
@@ -1367,11 +1433,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Brands />
         <Features />
         <Philosophy />
         <Testimonials />
         <ProductGallery />
-        <CTASection />
         <FAQ />
         <SeoLandingLinks />
       </main>
