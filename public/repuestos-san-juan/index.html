@@ -3,218 +3,645 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repuestos del Automotor en San Juan | Electromóvil</title>
+    <title>Casa de Repuestos del Automotor en San Juan | Baterías, Alternadores y Faros — Electromóvil</title>
     <meta
       name="description"
-      content="La casa de repuestos del automotor más completa de San Juan: baterías, alternadores, arranques, faros, lámparas y más. Stock inmediato y asesoramiento. (264) 422-3645."
+      content="Casa de repuestos del automotor en San Juan: baterías, alternadores, arranques, faros y lámparas LED con stock real y asesoramiento. +40 años. WhatsApp (0264) 622-7950."
     />
     <link rel="canonical" href="https://electromovilsanjuan.com/repuestos-san-juan/" />
-    <meta property="og:type" content="article" />
+    <meta name="theme-color" content="#FBC92D" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://electromovilsanjuan.com/repuestos-san-juan/" />
-    <meta property="og:title" content="Repuestos del Automotor en San Juan | Electromovil" />
-    <meta
-      property="og:description"
-      content="Casa de repuestos del automotor en San Juan con el stock mas completo: baterias, alternadores, arranques, faros y lamparas."
+    <meta property="og:title" content="Casa de Repuestos del Automotor en San Juan | Electromóvil" />
+    <meta property="og:description" content="Baterías, alternadores, arranques, faros y lámparas LED con stock real. La casa de repuestos eléctricos más completa de San Juan." />
+    <meta property="og:image" content="https://electromovilsanjuan.com/og-image.png?v=2" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Electromóvil San Juan" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Casa de Repuestos del Automotor en San Juan | Electromóvil" />
+    <meta name="twitter:description" content="Baterías, alternadores, arranques, faros y lámparas LED con stock real en San Juan." />
+    <meta name="twitter:image" content="https://electromovilsanjuan.com/og-image.png?v=2" />
+
+    <!-- Fonts: non-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Chakra+Petch:wght@600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <meta property="og:image" content="https://electromovilsanjuan.com/og-image.png" />
-    <style>
-      :root {
-        --bg: #0b0b0b;
-        --panel: #141414;
-        --text: #f4f1e8;
-        --muted: #c6c1b2;
-        --line: #2b2b2b;
-        --brand: #fbc92d;
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="/fachada-v2.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- Google Ads (gtag.js) — deferred for performance -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      function _loadGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16873673665';
+        s.async = true;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'AW-16873673665');
       }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.65;
-      }
-      .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
-      .panel {
-        background: linear-gradient(180deg, #191919 0%, #101010 100%);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 28px;
-      }
-      h1, h2, h3 { line-height: 1.2; margin: 0 0 14px; }
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.55rem; margin-top: 30px; }
-      h3 { font-size: 1.1rem; margin-top: 18px; }
-      p { margin: 0 0 14px; color: var(--muted); }
-      strong { color: var(--text); }
-      .badge {
-        display: inline-block;
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #0b0b0b;
-        background: var(--brand);
-        font-weight: 700;
-        border-radius: 999px;
-        padding: 8px 12px;
-      }
-      .cta {
-        display: inline-block;
-        margin-top: 8px;
-        background: var(--brand);
-        color: #111;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 12px 18px;
-        border-radius: 999px;
-      }
-      ul { margin: 0 0 14px; padding-left: 20px; color: var(--muted); }
-      li { margin-bottom: 8px; }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
-      }
-      .card {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 16px;
-      }
-      .footer-links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; }
-      .footer-links a { color: var(--brand); }
-    </style>
+      setTimeout(_loadGtag, 3000);
+      ['click','scroll','keydown','touchstart'].forEach(function(e) {
+        addEventListener(e, _loadGtag, { once: true });
+      });
+    </script>
+
+    <!-- Structured data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://electromovilsanjuan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Repuestos del Automotor en San Juan", "item": "https://electromovilsanjuan.com/repuestos-san-juan/" }
-        ]
-      }
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://electromovilsanjuan.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Repuestos del Automotor en San Juan", "item": "https://electromovilsanjuan.com/repuestos-san-juan/" }
+      ]
+    }
     </script>
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebPage",
-            "@id": "https://electromovilsanjuan.com/repuestos-san-juan/#webpage",
-            "url": "https://electromovilsanjuan.com/repuestos-san-juan/",
-            "name": "Repuestos del Automotor en San Juan | Electromovil",
-            "description": "Casa de repuestos del automotor en San Juan con el stock mas completo.",
-            "inLanguage": "es-AR",
-            "isPartOf": { "@id": "https://electromovilsanjuan.com/#website" },
-            "about": { "@id": "https://electromovilsanjuan.com/#organization" }
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://electromovilsanjuan.com/repuestos-san-juan/#webpage",
+          "url": "https://electromovilsanjuan.com/repuestos-san-juan/",
+          "name": "Casa de Repuestos del Automotor en San Juan | Electromóvil",
+          "description": "Casa de repuestos del automotor en San Juan: baterías, alternadores, arranques, faros y lámparas LED con stock real y asesoramiento honesto.",
+          "inLanguage": "es-AR",
+          "dateModified": "2026-07-23",
+          "isPartOf": { "@id": "https://electromovilsanjuan.com/#website" },
+          "about": { "@id": "https://electromovilsanjuan.com/#organization" }
+        },
+        {
+          "@type": "AutoPartsStore",
+          "@id": "https://electromovilsanjuan.com/#organization",
+          "name": "Electromóvil San Juan",
+          "url": "https://electromovilsanjuan.com",
+          "logo": "https://electromovilsanjuan.com/logo.webp",
+          "image": "https://electromovilsanjuan.com/fachada-v2.webp",
+          "description": "Casa de repuestos del automotor con más de 40 años en San Juan. Baterías, alternadores, arranques, faros y lámparas, con stock real y taller propio.",
+          "telephone": "+54-264-422-3645",
+          "currenciesAccepted": "ARS",
+          "paymentAccepted": "Efectivo, Transferencia, Tarjeta de crédito, Tarjeta de débito",
+          "areaServed": { "@type": "State", "name": "San Juan", "containedInPlace": { "@type": "Country", "name": "Argentina" } },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Guillermo Rawson 158 Sur",
+            "addressLocality": "San Juan",
+            "addressRegion": "San Juan",
+            "addressCountry": "AR",
+            "postalCode": "5400"
           },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Que repuestos del automotor tienen?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Baterias, alternadores, motores de arranque, faros y opticas, lamparas LED y halogenas, y equipamiento electrico. Tenemos el stock mas completo de repuestos del automotor en San Juan."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Donde queda la casa de repuestos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Estamos en Av. Guillermo Rawson 158 Sur, San Juan. Atendemos de lunes a viernes de 8:30 a 13:00 y de 16:30 a 20:00, y sabados de 9:00 a 13:00."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Aceptan tarjetas?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Si. Aceptamos efectivo, transferencia, tarjeta de debito y tarjeta de credito."
-                }
-              }
-            ]
-          }
-        ]
-      }
+          "geo": { "@type": "GeoCoordinates", "latitude": -31.5375, "longitude": -68.5364 },
+          "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "13:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:30", "closes": "20:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+          ],
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.6, "reviewCount": 201, "bestRating": 5, "worstRating": 1 },
+          "sameAs": [
+            "https://www.instagram.com/electromovilsanjuan/",
+            "https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z/data=!3m1!4b1!4m6!3m5!1s0x96816a85cd8d9f15:0xe18bcfafa1dcfb6e!8m2!3d-31.5353497!4d-68.5147027!16s%2Fg%2F11g6xwv814"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Qué repuestos del automotor tienen en San Juan?", "acceptedAnswer": { "@type": "Answer", "text": "Somos especialistas en el rubro eléctrico: baterías, alternadores, motores de arranque, faros y ópticas, lámparas LED y halógenas, reguladores, bobinas y equipamiento eléctrico. Tenemos el stock más completo del rubro en San Juan." } },
+            { "@type": "Question", "name": "¿Tienen repuestos para todas las marcas de autos?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos repuestos eléctricos para la mayoría de marcas y modelos: Ford, Fiat, Renault, Volkswagen, Chevrolet, Peugeot, Toyota y más. Consultanos por tu vehículo puntual y te confirmamos disponibilidad al instante." } },
+            { "@type": "Question", "name": "¿Dónde queda la casa de repuestos?", "acceptedAnswer": { "@type": "Answer", "text": "Estamos en Av. Guillermo Rawson 158 Sur, San Juan. Atendemos de lunes a viernes de 8:30 a 13:00 y de 16:30 a 20:00, y sábados de 9:00 a 13:00." } },
+            { "@type": "Question", "name": "¿Aceptan tarjetas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Aceptamos efectivo, transferencia, tarjeta de débito y tarjeta de crédito." } },
+            { "@type": "Question", "name": "¿Atienden a talleres y mecánicos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Somos proveedores habituales de talleres y mecánicos de San Juan, además de particulares. Consultá precios por cantidad." } },
+            { "@type": "Question", "name": "¿Hacen envíos o entregas?", "acceptedAnswer": { "@type": "Answer", "text": "Consultá por WhatsApp las opciones de entrega según el producto y tu ubicación." } }
+          ]
+        }
+      ]
+    }
     </script>
+
+    <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Montserrat,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.-right-32{right:-8rem}.-top-32{top:-8rem}.bottom-0{bottom:0}.bottom-6{bottom:1.5rem}.left-0{left:0}.left-1\/2{left:50%}.right-0{right:0}.right-6{right:1.5rem}.top-4{top:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.-mt-2{margin-top:-.5rem}.mb-1\.5{margin-bottom:.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mr-1\.5{margin-right:.375rem}.mt-0\.5{margin-top:.125rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.mt-9{margin-top:2.25rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.aspect-\[5\/4\]{aspect-ratio:5/4}.h-1{height:.25rem}.h-1\.5{height:.375rem}.h-11{height:2.75rem}.h-14{height:3.5rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-8{height:2rem}.h-\[28rem\]{height:28rem}.h-auto{height:auto}.h-full{height:100%}.w-1{width:.25rem}.w-1\.5{width:.375rem}.w-11{width:2.75rem}.w-14{width:3.5rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-\[28rem\]{width:28rem}.w-\[calc\(100\%-2rem\)\]{width:calc(100% - 2rem)}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-7xl{max-width:80rem}.max-w-\[12rem\]{max-width:12rem}.max-w-\[15rem\]{max-width:15rem}.max-w-xl{max-width:36rem}.max-w-xs{max-width:20rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%,to{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-0\.5{gap:.125rem}.gap-1\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-x-8{-moz-column-gap:2rem;column-gap:2rem}.gap-y-2{row-gap:.5rem}.gap-y-3{row-gap:.75rem}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-4xl{border-radius:2rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/15{border-color:hsla(0,0%,100%,.15)}.border-white\/\[0\.06\]{border-color:hsla(0,0%,100%,.06)}.bg-\[\#25D366\]{--tw-bg-opacity:1;background-color:rgb(37 211 102/var(--tw-bg-opacity,1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.bg-black\/30{background-color:rgba(0,0,0,.3)}.bg-green-400{--tw-bg-opacity:1;background-color:rgb(74 222 128/var(--tw-bg-opacity,1))}.bg-ivory\/30{background-color:hsla(43,26%,95%,.3)}.bg-void{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.bg-white\/\[0\.02\]{background-color:hsla(0,0%,100%,.02)}.bg-white\/\[0\.03\]{background-color:hsla(0,0%,100%,.03)}.bg-yellow-brand{--tw-bg-opacity:1;background-color:rgb(251 201 45/var(--tw-bg-opacity,1))}.bg-yellow-brand\/10{background-color:rgba(251,201,45,.1)}.bg-yellow-light{--tw-bg-opacity:1;background-color:rgb(253 217 106/var(--tw-bg-opacity,1))}.bg-\[radial-gradient\(ellipse_at_top_right\2c rgba\(251\2c 201\2c 45\2c 0\.10\)\2c transparent_55\%\)\]{background-image:radial-gradient(ellipse at top right,rgba(251,201,45,.1),transparent 55%)}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-black\/85{--tw-gradient-from:rgba(0,0,0,.85) var(--tw-gradient-from-position);--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-black\/90{--tw-gradient-from:rgba(0,0,0,.9) var(--tw-gradient-from-position);--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-black\/20{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(0,0,0,.2) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-black\/40{--tw-gradient-to:transparent var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(0,0,0,.4) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-cover{-o-object-fit:cover;object-fit:cover}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-10{padding-bottom:2.5rem}.pb-28{padding-bottom:7rem}.pb-6{padding-bottom:1.5rem}.pr-4{padding-right:1rem}.pt-14{padding-top:3.5rem}.pt-2{padding-top:.5rem}.pt-28{padding-top:7rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-middle{vertical-align:middle}.font-display{font-family:Chakra Petch,sans-serif}.font-heading{font-family:Montserrat,sans-serif}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.font-sans{font-family:Montserrat,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.05\]{line-height:1.05}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-widest{letter-spacing:.1em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.text-ivory{--tw-text-opacity:1;color:rgb(245 243 238/var(--tw-text-opacity,1))}.text-ivory\/30{color:hsla(43,26%,95%,.3)}.text-ivory\/40{color:hsla(43,26%,95%,.4)}.text-ivory\/45{color:hsla(43,26%,95%,.45)}.text-ivory\/50{color:hsla(43,26%,95%,.5)}.text-ivory\/55{color:hsla(43,26%,95%,.55)}.text-ivory\/60{color:hsla(43,26%,95%,.6)}.text-ivory\/65{color:hsla(43,26%,95%,.65)}.text-ivory\/70{color:hsla(43,26%,95%,.7)}.text-ivory\/75{color:hsla(43,26%,95%,.75)}.text-ivory\/80{color:hsla(43,26%,95%,.8)}.text-ivory\/90{color:hsla(43,26%,95%,.9)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-yellow-brand{--tw-text-opacity:1;color:rgb(251 201 45/var(--tw-text-opacity,1))}.text-yellow-brand\/25{color:rgba(251,201,45,.25)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-50{opacity:.5}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.blur-\[120px\]{--tw-blur:blur(120px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.glow-yellow{box-shadow:0 0 40px rgba(251,201,45,.15),0 0 80px rgba(251,201,45,.05)}.border-subtle{border:1px solid hsla(0,0%,100%,.08)}.border-yellow-subtle{border:1px solid rgba(251,201,45,.2)}.glass-dark{background:rgba(0,0,0,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}.card-surface{background:hsla(0,0%,7%,.9);border:1px solid hsla(0,0%,100%,.07)}body{background-color:#000;color:#f5f3ee;font-family:Montserrat,sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='4' stitchTiles='stitch' type='fractalNoise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}.btn-magnetic{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s cubic-bezier(.25,.46,.45,.94)}.btn-magnetic:hover{transform:scale(1.03)}.btn-magnetic .btn-bg-slide{position:absolute;inset:0;transform:translateX(-100%);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}.btn-magnetic:hover .btn-bg-slide{transform:translateX(0)}.nav-link{transition:color .2s ease,transform .2s ease}.nav-link:hover{transform:translateY(-1px);color:#fbc92d}@keyframes pulse-dot{0%,to{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}.pulse-dot{animation:pulse-dot 2s ease-in-out infinite}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:#fbc92d;border-radius:2px}:focus{outline:2px solid rgba(251,201,45,.5);outline-offset:2px}@keyframes fadeInUp{0%{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.scroll-reveal{opacity:0;transform:translateY(30px)}.scroll-reveal.visible{animation:fadeInUp .7s cubic-bezier(.16,1,.3,1) both}.scroll-reveal-stagger>.scroll-reveal:first-child.visible{animation-delay:0s}.scroll-reveal-stagger>.scroll-reveal:nth-child(2).visible{animation-delay:.08s}.scroll-reveal-stagger>.scroll-reveal:nth-child(3).visible{animation-delay:.16s}.scroll-reveal-stagger>.scroll-reveal:nth-child(4).visible{animation-delay:.24s}.scroll-reveal-stagger>.scroll-reveal:nth-child(5).visible{animation-delay:.32s}.scroll-reveal-stagger>.scroll-reveal:nth-child(6).visible{animation-delay:.4s}@keyframes heroFadeIn{0%{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.hero-fade-in{opacity:0;animation:heroFadeIn .8s cubic-bezier(.16,1,.3,1) forwards}@media (prefers-reduced-motion:reduce){.hero-fade-in,.scroll-reveal{animation:none!important;opacity:1!important;transform:none!important}}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem}.hover\:-translate-y-1:hover,.hover\:scale-110:hover{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1}.hover\:border-yellow-brand\/40:hover{border-color:rgba(251,201,45,.4)}.hover\:text-yellow-brand:hover{--tw-text-opacity:1;color:rgb(251 201 45/var(--tw-text-opacity,1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:absolute:focus{position:absolute}.focus\:left-2:focus{left:.5rem}.focus\:top-2:focus{top:.5rem}.focus\:z-\[100\]:focus{z-index:100}.focus\:rounded-full:focus{border-radius:9999px}.focus\:bg-yellow-brand:focus{--tw-bg-opacity:1;background-color:rgb(251 201 45/var(--tw-bg-opacity,1))}.focus\:px-4:focus{padding-left:1rem;padding-right:1rem}.focus\:py-2:focus{padding-top:.5rem;padding-bottom:.5rem}.focus\:text-black:focus{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity,1))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-yellow-brand{--tw-text-opacity:1;color:rgb(251 201 45/var(--tw-text-opacity,1))}@media (min-width:640px){.sm\:inline{display:inline}.sm\:inline-flex{display:inline-flex}.sm\:table-cell{display:table-cell}.sm\:hidden{display:none}.sm\:max-w-xs{max-width:20rem}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-96{height:24rem}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:p-12{padding:3rem}.md\:px-12{padding-left:3rem;padding-right:3rem}.md\:px-5{padding-left:1.25rem;padding-right:1.25rem}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:px-7{padding-left:1.75rem;padding-right:1.75rem}.md\:py-20{padding-top:5rem;padding-bottom:5rem}.md\:py-24{padding-top:6rem;padding-bottom:6rem}.md\:py-28{padding-top:7rem;padding-bottom:7rem}.md\:pb-14{padding-bottom:3.5rem}.md\:pb-20{padding-bottom:5rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:1024px){.lg\:mt-0{margin-top:0}.lg\:min-h-\[100dvh\]{min-height:100dvh}.lg\:max-w-md{max-width:28rem}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:text-\[4\.2rem\]{font-size:4.2rem}}</style>
+    <style>
+      /* Hero mobile/tablet: foto del local de fondo con capa oscura. Desktop (>=1024px): card al costado. */
+      .hero-photo-bg{position:absolute;inset:0;z-index:0}
+      .hero-photo-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+      .hero-photo-bg .hpb-tint{position:absolute;inset:0;background:rgba(0,0,0,.62)}
+      .hero-photo-bg .hpb-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.15) 42%,rgba(0,0,0,.7) 82%,#000 100%)}
+      @media (max-width:1023px){.hero-card-side{display:none}}
+      @media (min-width:1024px){.hero-photo-bg{display:none}}
+    </style>
   </head>
-  <body>
-    <main class="wrap">
-      <article class="panel">
-        <span class="badge">Electromovil San Juan</span>
-        <h1>Repuestos del automotor en San Juan</h1>
-        <p>
-          Si buscás una <strong>casa de repuestos del automotor en San Juan</strong>, en
-          <strong>Electromóvil</strong> tenés el stock más completo del rubro eléctrico, con más de 40
-          años atendiendo a talleres, mecánicos y particulares. Desde la batería hasta el faro: lo que
-          tu vehículo necesita, con asesoramiento real y al mejor precio.
-        </p>
-        <a class="cta" href="https://wa.me/5492646227950?text=Hola%2C%20quiero%20consultar%20por%20repuestos" rel="noopener noreferrer" target="_blank">Consultar por WhatsApp</a>
 
-        <h2>Qué repuestos tenemos en stock</h2>
-        <div class="grid">
-          <section class="card">
-            <h3>Baterías</h3>
-            <p>Moura, Reymax y Sermat para autos, camionetas, utilitarios, maquinaria y motos.</p>
-          </section>
-          <section class="card">
-            <h3>Alternadores</h3>
-            <p>Nuevos y reparados para todas las marcas, verificados en banco de pruebas.</p>
-          </section>
-          <section class="card">
-            <h3>Arranques</h3>
-            <p>Motores de arranque nacionales e importados. Venta y reparación en taller propio.</p>
-          </section>
-          <section class="card">
-            <h3>Faros y ópticas</h3>
-            <p>Ópticas completas, faros delanteros y traseros, originales y alternativos.</p>
-          </section>
-          <section class="card">
-            <h3>Lámparas</h3>
-            <p>LED, halógenas y xenón para luces principales, de posición, giro y freno.</p>
-          </section>
-          <section class="card">
-            <h3>Equipamiento minero</h3>
-            <p>Pértigas y accesorios eléctricos para la industria minera de San Juan.</p>
-          </section>
+  <body class="bg-void text-ivory font-sans antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-2 focus:left-2 focus:bg-yellow-brand focus:text-black focus:px-4 focus:py-2 focus:rounded-full">Saltar al contenido</a>
+
+    <!-- ░░ NAV ░░ -->
+    <nav id="nav" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[calc(100%-2rem)] max-w-5xl rounded-full px-5 md:px-6 py-3 flex items-center justify-between bg-black/30 backdrop-blur-sm">
+      <a href="/" class="flex items-center gap-2 shrink-0" aria-label="Electromóvil San Juan - Inicio">
+        <img src="/logo.webp" alt="Electromóvil San Juan" width="130" height="30" class="h-7 w-auto" />
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#rubros" class="nav-link text-ivory/70 text-sm font-medium">Rubros</a>
+        <a href="#porque" class="nav-link text-ivory/70 text-sm font-medium">Por qué elegirnos</a>
+        <a href="#faq" class="nav-link text-ivory/70 text-sm font-medium">Preguntas</a>
+        <a href="#ubicacion" class="nav-link text-ivory/70 text-sm font-medium">Cómo llegar</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="tel:2644223645" data-wa="0" class="hidden sm:inline-flex items-center gap-1.5 text-ivory/80 text-sm font-medium nav-link" aria-label="Llamar al (0264) 422-3645">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          422-3645
+        </a>
+        <a href="https://wa.me/5492646227950?text=Hola%2C%20quiero%20consultar%20por%20un%20repuesto" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-nav-cta" class="btn-magnetic inline-flex items-center gap-2 bg-yellow-brand text-black font-bold px-4 md:px-5 py-2.5 rounded-full text-sm whitespace-nowrap">
+          <span class="btn-bg-slide bg-yellow-light rounded-full"></span>
+          <svg class="relative z-10" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span class="relative z-10 hidden sm:inline">WhatsApp</span>
+          <span class="relative z-10 sm:hidden">Consultar</span>
+        </a>
+      </div>
+    </nav>
+
+    <main id="contenido">
+      <!-- ░░ HERO ░░ -->
+      <section class="relative lg:min-h-[100dvh] flex items-center pt-28 pb-10 md:pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(251,201,45,0.10),transparent_55%)]"></div>
+          <div class="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-yellow-brand/10 blur-[120px]"></div>
+          <div class="hero-photo-bg">
+            <img src="/fachada-v2.webp" alt="" aria-hidden="true" fetchpriority="high" decoding="async" width="600" height="800" />
+            <div class="hpb-tint"></div>
+            <div class="hpb-grad"></div>
+          </div>
         </div>
-
-        <h2>Por qué comprar en Electromóvil</h2>
-        <ul>
-          <li><strong>Stock real e inmediato:</strong> no te hacemos esperar semanas por un repuesto común.</li>
-          <li><strong>Asesoramiento honesto:</strong> te ayudamos a elegir la pieza correcta según tu vehículo y uso.</li>
-          <li><strong>Taller propio:</strong> reparamos arranques y alternadores en casa, con garantía.</li>
-          <li><strong>Diagnóstico gratuito:</strong> revisamos tu batería sin costo antes de que compres.</li>
-          <li><strong>Marcas líderes:</strong> trabajamos primeras marcas del mercado argentino.</li>
-        </ul>
-
-        <h2>Dónde estamos y cómo comprar</h2>
-        <p>
-          Nos encontrás en <strong>Av. Guillermo Rawson 158 Sur, San Juan</strong>. Atendemos de lunes
-          a viernes de 8:30 a 13:00 y de 16:30 a 20:00, y sábados de 9:00 a 13:00. Podés acercarte al
-          local, llamarnos al <strong>(0264) 422-3645</strong> o consultarnos por WhatsApp al
-          <strong>(0264) 622-7950</strong>. Aceptamos efectivo, transferencia y tarjetas de débito y crédito.
-        </p>
-
-        <h2>Preguntas frecuentes</h2>
-        <h3>¿Tienen repuestos para todas las marcas?</h3>
-        <p>Trabajamos repuestos eléctricos para la mayoría de marcas y modelos. Consultanos por tu vehículo puntual y te confirmamos disponibilidad.</p>
-        <h3>¿Hacen envíos o entregas?</h3>
-        <p>Consultá por WhatsApp las opciones de entrega según el producto y tu ubicación.</p>
-        <h3>¿Atienden a talleres y mecánicos?</h3>
-        <p>Sí. Somos proveedores habituales de talleres y mecánicos de San Juan, además de particulares.</p>
-
-        <div class="footer-links">
-          <a href="/baterias-san-juan/">Baterías en San Juan</a>
-          <a href="/electricidad-del-automotor-san-juan/">Electricidad del automotor</a>
-          <a href="/precio-bateria-auto-san-juan/">Precios de batería</a>
-          <a href="/">Volver al sitio principal</a>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center w-full">
+          <div>
+            <div class="hero-fade-in inline-flex items-center gap-2.5 border-yellow-subtle rounded-full px-4 py-2 mb-6 glass-dark" style="animation-delay:.1s">
+              <span class="text-yellow-brand text-base leading-none">★★★★★</span>
+              <span class="font-bold text-sm text-white">4,6</span>
+              <span class="text-ivory/40 text-xs">en Google</span>
+              <span class="w-1 h-1 rounded-full bg-ivory/30"></span>
+              <span class="text-ivory/60 text-xs">+201 reseñas</span>
+            </div>
+            <h1 class="hero-fade-in font-heading font-bold text-4xl md:text-6xl lg:text-[4.2rem] leading-[1.05] text-ivory mb-5" style="animation-delay:.18s">
+              Casa de repuestos en <span class="text-yellow-brand">San Juan</span>
+            </h1>
+            <p class="hero-fade-in text-ivory/80 text-lg md:text-xl leading-relaxed mb-8 max-w-xl" style="animation-delay:.26s">
+              El stock más completo del rubro eléctrico: <strong class="text-ivory">baterías, alternadores, arranques, faros y lámparas</strong>. +40 años atendiendo a San Juan.
+            </p>
+            <div class="hero-fade-in flex flex-col sm:flex-row gap-3" style="animation-delay:.4s">
+              <a href="https://wa.me/5492646227950?text=Hola%21%20Busco%20un%20repuesto%20para%20mi%20veh%C3%ADculo.%20Es%20un%3A%20" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-hero-cta" class="btn-magnetic inline-flex items-center justify-center gap-2.5 bg-yellow-brand text-black font-bold px-7 py-4 rounded-full text-base glow-yellow">
+                <span class="btn-bg-slide bg-yellow-light rounded-full"></span>
+                <svg class="relative z-10" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span class="relative z-10">Consultar por WhatsApp</span>
+              </a>
+              <a href="#rubros" class="btn-magnetic inline-flex items-center justify-center gap-2.5 border border-white/15 bg-white/[0.03] text-ivory font-semibold px-7 py-4 rounded-full text-base hover:border-yellow-brand/40">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>
+                Ver rubros
+              </a>
+            </div>
+            <p class="hero-fade-in text-ivory/65 text-sm mt-4 leading-relaxed" style="animation-delay:.44s">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot align-middle mr-1.5"></span>Decinos qué buscás y <strong class="text-ivory/90">te confirmamos stock y precio al instante</strong>.
+            </p>
+            <div class="hero-fade-in flex flex-wrap items-center gap-x-5 gap-y-2 mt-5 text-ivory/55 text-sm" style="animation-delay:.5s">
+              <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span> +40 años en San Juan</span>
+              <span class="inline-flex items-center gap-1.5"><span class="text-yellow-brand">✓</span> Stock real e inmediato</span>
+            </div>
+          </div>
+          <div class="hero-fade-in relative hero-card-side mt-8 lg:mt-0" style="animation-delay:.3s">
+            <div class="relative rounded-4xl overflow-hidden border-yellow-subtle glow-yellow max-w-[15rem] sm:max-w-xs lg:max-w-md mx-auto">
+              <img src="/fachada-v2.webp" alt="Local de Electromóvil San Juan en Av. Guillermo Rawson 158 Sur — casa de repuestos del automotor" width="600" height="800" loading="lazy" class="w-full h-auto object-cover" />
+              <div class="absolute inset-x-0 bottom-0 p-5 pt-14 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                <div class="flex items-center gap-2 text-yellow-brand font-mono text-xs uppercase tracking-widest mb-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span> Nuestro local
+                </div>
+                <div class="text-ivory font-heading font-semibold text-sm">Av. Guillermo Rawson 158 Sur · San Juan</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
+      </section>
+
+      <!-- ░░ RUBROS ░░ -->
+      <section id="rubros" class="py-24 md:py-28 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal text-center mb-12">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Qué tenemos en stock</span>
+            <h2 class="font-heading font-bold text-3xl md:text-5xl text-ivory mt-3 mb-4">Repuestos del automotor, rubro por rubro</h2>
+            <p class="text-ivory/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">Especialistas en la parte eléctrica de tu vehículo. Desde la batería hasta el faro: si es eléctrico, lo tenemos.</p>
+          </div>
+          <div class="scroll-reveal-stagger grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Baterías</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Moura, Sermat y Pioneiro para autos, camionetas, utilitarios y motos. <a href="/baterias-san-juan/" class="text-yellow-brand nav-link">Ver precios →</a></p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Alternadores</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Nuevos y reparados para todas las marcas, verificados en banco de pruebas. <a href="/electricidad-del-automotor-san-juan/" class="text-yellow-brand nav-link">Más info →</a></p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Motores de arranque</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Burros de arranque nacionales e importados. Venta y reparación en taller propio, con garantía.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Faros y ópticas</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Ópticas completas, faros delanteros y traseros, originales y alternativos. <a href="/faros-lamparas-led-san-juan/" class="text-yellow-brand nav-link">Ver faros y LED →</a></p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Lámparas LED y halógenas</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">LED, halógenas y xenón para luces principales, de posición, giro y freno. Primeras marcas.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4-9.5 9.5a2.83 2.83 0 0 1-4-4L14 6z"/><path d="m14 6 3-3 4 4-3 3"/><path d="m5 21 4-4"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Equipamiento minero</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Pértigas, balizas y accesorios eléctricos para la industria minera de San Juan.</p>
+            </div>
+          </div>
+          <div class="scroll-reveal text-center mt-9">
+            <a href="https://wa.me/5492646227950?text=Hola%21%20Busco%20este%20repuesto%3A%20" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-rubros-cta" class="btn-magnetic inline-flex items-center justify-center gap-2.5 bg-yellow-brand text-black font-bold px-7 py-4 rounded-full text-base glow-yellow">
+              <span class="btn-bg-slide bg-yellow-light rounded-full"></span>
+              <svg class="relative z-10" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span class="relative z-10">Preguntá por tu repuesto</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ ASÍ DE FÁCIL (3 pasos) ░░ -->
+      <section class="py-16 md:py-20 border-t border-white/[0.06]">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal text-center mb-10">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Así de fácil</span>
+            <h2 class="font-heading font-bold text-2xl md:text-4xl text-ivory mt-3">Tu repuesto, en 3 pasos</h2>
+          </div>
+          <div class="scroll-reveal-stagger grid sm:grid-cols-3 gap-5">
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="font-display font-bold text-4xl text-yellow-brand/25 mb-2">1</div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Escribinos por WhatsApp</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Contanos qué buscás y para qué vehículo. Si no sabés el nombre de la pieza, mandanos una foto.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="font-display font-bold text-4xl text-yellow-brand/25 mb-2">2</div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Te confirmamos stock y precio</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Verificamos que sea el repuesto correcto para tu modelo y te pasamos el precio final al instante.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="font-display font-bold text-4xl text-yellow-brand/25 mb-2">3</div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Lo retirás en el momento</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Pasás por el local en el centro y te lo llevás. Stock real: no te hacemos esperar semanas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ POR QUÉ ELEGIRNOS ░░ -->
+      <section id="porque" class="py-20 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal text-center mb-12">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Por qué elegirnos</span>
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-ivory mt-3">Una casa de repuestos con respaldo real</h2>
+          </div>
+          <div class="scroll-reveal-stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Stock real e inmediato</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Las piezas más pedidas están en el local. No te hacemos esperar semanas por un repuesto común.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m8 11 2 2 4-4"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Asesoramiento honesto</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Te ayudamos a elegir la pieza correcta según tu vehículo y uso. Si no te hace falta, te lo decimos.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Taller propio</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Reparamos arranques y alternadores en casa, con banco de pruebas y garantía sobre el trabajo.</p>
+            </div>
+            <div class="scroll-reveal card-surface rounded-3xl p-6">
+              <div class="w-11 h-11 rounded-2xl bg-yellow-brand/10 flex items-center justify-center mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></div>
+              <h3 class="font-heading font-bold text-lg text-ivory mb-1.5">Todas las formas de pago</h3>
+              <p class="text-ivory/60 text-sm leading-relaxed">Efectivo, transferencia, débito y crédito. Consultá las opciones de financiación disponibles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ MARCAS CTA ░░ -->
+      <section class="py-16 md:py-20 border-t border-white/[0.06]">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal relative rounded-4xl overflow-hidden border-yellow-subtle glow-yellow p-8 md:p-12 text-center" style="background:linear-gradient(135deg,rgba(251,201,45,0.10),rgba(17,17,17,0.6))">
+            <h2 class="font-heading font-bold text-2xl md:text-4xl text-ivory mb-3">¿No sabés el nombre de la pieza?</h2>
+            <p class="text-ivory/70 text-base md:text-lg max-w-2xl mx-auto mb-7">Mandanos una foto del repuesto o contanos el síntoma y el modelo del vehículo. Trabajamos repuestos eléctricos para Ford, Fiat, Renault, Volkswagen, Chevrolet, Peugeot, Toyota y más.</p>
+            <a href="https://wa.me/5492646227950?text=Hola%21%20Te%20mando%20foto%20del%20repuesto%20que%20busco" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-foto-cta" class="btn-magnetic inline-flex items-center justify-center gap-2.5 bg-yellow-brand text-black font-bold px-7 py-4 rounded-full text-base">
+              <span class="btn-bg-slide bg-yellow-light rounded-full"></span>
+              <span class="relative z-10">Mandar foto por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ TESTIMONIOS ░░ -->
+      <section class="py-20 md:py-24 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal text-center mb-12">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Lo que dicen nuestros clientes</span>
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-ivory mt-3">4,6 ★ en Google · +201 reseñas</h2>
+          </div>
+          <div class="scroll-reveal-stagger grid md:grid-cols-3 gap-6">
+            <div class="scroll-reveal rounded-2xl border-subtle bg-white/[0.02] p-6 flex flex-col gap-4">
+              <div class="flex gap-0.5 text-yellow-brand">★★★★★</div>
+              <p class="text-ivory/70 text-sm leading-relaxed flex-1">"Tienen buen precio en baterías y variedad."</p>
+              <div class="font-heading font-semibold text-ivory text-sm">Miguel Castillo</div>
+            </div>
+            <div class="scroll-reveal rounded-2xl border-subtle bg-white/[0.02] p-6 flex flex-col gap-4">
+              <div class="flex gap-0.5 text-yellow-brand">★★★★★</div>
+              <p class="text-ivory/70 text-sm leading-relaxed flex-1">"Muy buena atención... desde el dueño hasta sus empleados. Y los precios son excelentes!"</p>
+              <div class="font-heading font-semibold text-ivory text-sm">Gabriel Burgoa</div>
+            </div>
+            <div class="scroll-reveal rounded-2xl border-subtle bg-white/[0.02] p-6 flex flex-col gap-4">
+              <div class="flex gap-0.5 text-yellow-brand">★★★★★</div>
+              <p class="text-ivory/70 text-sm leading-relaxed flex-1">"Excelente atención, todos muy buenas personas y muy recomendable en precios y calidad."</p>
+              <div class="font-heading font-semibold text-ivory text-sm">Gonzalo Andersen</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ FAQ ░░ -->
+      <section id="faq" class="py-20 md:py-24">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+          <div class="scroll-reveal text-center mb-12">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Preguntas frecuentes</span>
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-ivory mt-3">Sobre nuestra casa de repuestos</h2>
+          </div>
+          <div class="flex flex-col gap-3" id="faq-list">
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Qué repuestos del automotor tienen?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">Somos especialistas en el <strong class="text-ivory">rubro eléctrico</strong>: baterías, alternadores, motores de arranque, faros y ópticas, lámparas LED y halógenas, reguladores, bobinas y equipamiento eléctrico. El stock más completo del rubro en San Juan.</p></div>
+            </div>
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Tienen repuestos para todas las marcas?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">Trabajamos repuestos eléctricos para la mayoría de marcas y modelos: Ford, Fiat, Renault, Volkswagen, Chevrolet, Peugeot, Toyota y más. Consultanos por tu vehículo puntual y te confirmamos disponibilidad al instante.</p></div>
+            </div>
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Dónde queda la casa de repuestos?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">En <strong class="text-ivory">Av. Guillermo Rawson 158 Sur, San Juan</strong>. Atendemos de lunes a viernes de 8:30 a 13:00 y de 16:30 a 20:00, y sábados de 9:00 a 13:00.</p></div>
+            </div>
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Aceptan tarjetas?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">Sí. Aceptamos efectivo, transferencia, tarjeta de débito y tarjeta de crédito. Consultá las opciones de financiación disponibles.</p></div>
+            </div>
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Atienden a talleres y mecánicos?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">Sí. Somos proveedores habituales de talleres y mecánicos de San Juan, además de particulares. Consultá precios por cantidad.</p></div>
+            </div>
+            <div class="faq-item scroll-reveal rounded-2xl border-subtle bg-white/[0.02] overflow-hidden">
+              <button class="faq-q w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false">
+                <h3 class="font-heading font-semibold text-ivory text-base md:text-lg pr-4">¿Hacen envíos o entregas?</h3>
+                <span class="faq-chevron text-yellow-brand shrink-0 transition-transform duration-300">▸</span>
+              </button>
+              <div class="faq-a hidden px-6 pb-6 -mt-2"><p class="text-ivory/60 text-sm md:text-base leading-relaxed">Consultá por WhatsApp las opciones de entrega según el producto y tu ubicación.</p></div>
+            </div>
+          </div>
+          <div class="scroll-reveal text-center mt-10">
+            <p class="text-ivory/70 text-base mb-4">¿Te quedó alguna otra duda? Te respondemos al toque.</p>
+            <a href="https://wa.me/5492646227950?text=Hola%21%20Tengo%20una%20consulta%20sobre%20repuestos%3A%20" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-faq-cta" class="btn-magnetic inline-flex items-center justify-center gap-2.5 bg-yellow-brand text-black font-bold px-7 py-4 rounded-full text-base glow-yellow">
+              <span class="btn-bg-slide bg-yellow-light rounded-full"></span>
+              <svg class="relative z-10" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span class="relative z-10">Preguntanos por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ UBICACIÓN ░░ -->
+      <section id="ubicacion" class="py-20 md:py-24 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-10 items-center">
+          <div class="scroll-reveal">
+            <span class="font-mono text-xs text-yellow-brand uppercase tracking-widest">// Cómo llegar</span>
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-ivory mt-3 mb-6">Veninos a ver en San Juan</h2>
+            <ul class="space-y-4 text-ivory/70">
+              <li class="flex items-start gap-3"><svg width="18" height="18" class="mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Av. Guillermo Rawson 158 Sur, San Juan</span></li>
+              <li class="flex items-start gap-3"><svg width="18" height="18" class="mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Lun a Vie: 8:30-13:00 y 16:30-20:00 · Sáb: 9:00-13:00</span></li>
+              <li class="flex items-start gap-3"><svg width="18" height="18" class="mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#FBC92D" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:2644223645" data-wa="0" class="nav-link hover:text-yellow-brand">(0264) 422-3645</a></li>
+            </ul>
+            <div class="flex flex-col sm:flex-row gap-3 mt-8">
+              <a href="https://wa.me/5492646227950?text=Hola%2C%20consulto%20por%20repuestos%20en%20San%20Juan" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-ubicacion-cta" class="btn-magnetic inline-flex items-center justify-center gap-2 bg-yellow-brand text-black font-bold px-6 py-3.5 rounded-full text-sm"><span class="btn-bg-slide bg-yellow-light rounded-full"></span><span class="relative z-10">Escribinos por WhatsApp</span></a>
+              <a href="https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border border-white/15 text-ivory font-semibold px-6 py-3.5 rounded-full text-sm hover:border-yellow-brand/40">Ver en Google Maps</a>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/place/Electrom%C3%B3vil+San+Juan/@-31.5353451,-68.5172776,17z" target="_blank" rel="noopener noreferrer" class="scroll-reveal group relative block rounded-3xl overflow-hidden border-subtle h-72 md:h-96">
+            <img src="/fachada-v2.webp" alt="Local de Electromóvil San Juan en Av. Guillermo Rawson 158 Sur, San Juan" width="640" height="384" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between gap-4">
+              <div>
+                <div class="font-heading font-bold text-ivory text-lg">Electromóvil San Juan</div>
+                <div class="text-ivory/70 text-sm">Av. Guillermo Rawson 158 Sur</div>
+              </div>
+              <span class="btn-magnetic inline-flex items-center gap-1.5 bg-yellow-brand text-black font-bold px-4 py-2.5 rounded-full text-sm shrink-0">Cómo llegar →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ░░ FOOTER ░░ -->
+      <footer class="border-t border-white/[0.06] pt-14 pb-28 md:pb-14">
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+          <div class="grid md:grid-cols-3 gap-10">
+            <div>
+              <img src="/logo.webp" alt="Electromóvil San Juan" width="150" height="34" class="h-8 w-auto mb-4" />
+              <p class="text-ivory/50 text-sm leading-relaxed max-w-xs">Repuestos eléctricos del automotor en San Juan. Baterías, alternadores, arranques e iluminación. Más de 40 años de trayectoria.</p>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-yellow-brand uppercase tracking-widest mb-4">Más guías</div>
+              <ul class="space-y-2.5 text-sm">
+                <li><a href="/baterias-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Baterías en San Juan</a></li>
+                <li><a href="/precio-bateria-auto-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Precio de batería de auto</a></li>
+                <li><a href="/bateria-moura-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Batería Moura en San Juan</a></li>
+                <li><a href="/diagnostico-bateria-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Diagnóstico de batería gratis</a></li>
+                <li><a href="/electricidad-del-automotor-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Electricidad del automotor</a></li>
+                <li><a href="/faros-lamparas-led-san-juan/" class="text-ivory/55 hover:text-yellow-brand nav-link">Faros y luces LED</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="font-mono text-xs text-yellow-brand uppercase tracking-widest mb-4">Contacto</div>
+              <ul class="space-y-2.5 text-sm text-ivory/55">
+                <li>Av. Guillermo Rawson 158 Sur, San Juan</li>
+                <li><a href="tel:2644223645" data-wa="0" class="hover:text-yellow-brand nav-link">(0264) 422-3645</a></li>
+                <li><a href="https://wa.me/5492646227950?text=Hola%2C%20consulto%20por%20repuestos" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-footer-wa" class="hover:text-yellow-brand nav-link">WhatsApp (0264) 622-7950</a></li>
+                <li><a href="mailto:electromoviladm@gmail.com" class="hover:text-yellow-brand nav-link">electromoviladm@gmail.com</a></li>
+              </ul>
+              <a href="/" class="inline-block mt-5 text-yellow-brand text-sm nav-link">← Volver al sitio principal</a>
+            </div>
+          </div>
+          <div class="mt-12 pt-6 border-t border-white/[0.06] text-ivory/30 text-xs">© <span id="year">2026</span> Electromóvil San Juan · Casa de repuestos del automotor en San Juan, Argentina.</div>
+        </div>
+      </footer>
     </main>
+
+    <!-- ░░ WHATSAPP FLOTANTE ░░ -->
+    <a href="https://wa.me/5492646227950?text=Hola%2C%20consulto%20por%20repuestos%20en%20San%20Juan" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-flotante" aria-label="Contactar por WhatsApp" class="hidden md:flex fixed right-6 bottom-6 z-50 items-center justify-center w-14 h-14 rounded-full bg-[#25D366] shadow-lg transition-all duration-300 hover:scale-110">
+      <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-50 animate-ping" style="animation-duration:2.5s"></span>
+      <svg viewBox="0 0 24 24" fill="white" class="w-7 h-7 relative"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <!-- ░░ BARRA CTA MÓVIL ░░ -->
+    <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-50 px-3 pt-2 glass-dark border-t border-white/10" style="padding-bottom:calc(.6rem + env(safe-area-inset-bottom));transform:translateY(130%);transition:transform .35s cubic-bezier(.16,1,.3,1)">
+      <div class="flex items-center justify-center gap-1.5 text-ivory/70 text-[11px] mb-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot shrink-0"></span>
+        Respondemos en minutos · <span class="text-yellow-brand font-semibold">★ 4,6</span> <span class="text-ivory/45">(+201 reseñas)</span>
+      </div>
+      <a href="https://wa.me/5492646227950?text=Hola%21%20Busco%20un%20repuesto%20para%20mi%20veh%C3%ADculo%3A%20" target="_blank" rel="noopener noreferrer" data-wa="1" data-cta="repuestos-sticky-movil" class="flex w-full items-center justify-center gap-2.5 bg-[#25D366] text-white font-bold py-3.5 rounded-full text-base">
+        <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+
+    <!-- ░░ SCRIPT: conversión, atribución, interacción ░░ -->
+    <script>
+      (function () {
+        var ATTR_KEYS = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','wbraid','gbraid','fbclid'];
+        var SID_KEY = 'emsj_session_id_v1', ATTR_KEY = 'emsj_attribution_v1';
+
+        function sid() {
+          try {
+            var e = sessionStorage.getItem(SID_KEY);
+            if (e) return e;
+            var g = 'sid-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+            sessionStorage.setItem(SID_KEY, g); return g;
+          } catch (e) { return 'nostorage'; }
+        }
+        function captureAttr() {
+          try {
+            var p = new URLSearchParams(location.search), c = {};
+            ATTR_KEYS.forEach(function (k) { var v = p.get(k); if (v) c[k] = v; });
+            var stored = {};
+            try { stored = JSON.parse(localStorage.getItem(ATTR_KEY) || '{}'); } catch (e) {}
+            var has = Object.keys(c).length > 0;
+            var touch = { params: c, source: c.utm_source || (c.gclid ? 'google-ads' : 'direct'), at: new Date().toISOString() };
+            var next = { sessionId: sid(), firstTouch: stored.firstTouch || touch, lastTouch: has ? touch : (stored.lastTouch || touch) };
+            localStorage.setItem(ATTR_KEY, JSON.stringify(next));
+            return next;
+          } catch (e) { return { sessionId: sid(), lastTouch: { params: {} } }; }
+        }
+        var attribution = captureAttr();
+
+        function enrich(url, cta) {
+          try {
+            var u = new URL(url, location.origin);
+            if (!u.hostname.indexOf) return url;
+            if (u.hostname.indexOf('wa.me') === -1) return url;
+            u.searchParams.set('ref_page', location.pathname);
+            u.searchParams.set('ref_cta', cta || 'whatsapp');
+            u.searchParams.set('ref_sid', attribution.sessionId);
+            var lt = (attribution.lastTouch && attribution.lastTouch.params) || {};
+            ['utm_source','utm_medium','utm_campaign','gclid','wbraid','gbraid'].forEach(function (k) { if (lt[k]) u.searchParams.set(k, lt[k]); });
+            return u.toString();
+          } catch (e) { return url; }
+        }
+
+        function trackConversion(cta) {
+          _loadGtag();
+          if (typeof window.gtag === 'function') {
+            var lt = (attribution.lastTouch && attribution.lastTouch.params) || {};
+            window.gtag('event', 'whatsapp_click', {
+              event_category: 'lead',
+              event_label: cta || 'repuestos-landing',
+              page_path: location.pathname,
+              session_id: attribution.sessionId,
+              traffic_source: (attribution.lastTouch && attribution.lastTouch.source) || 'direct',
+              utm_campaign: lt.utm_campaign || '(none)'
+            });
+            window.gtag('event', 'conversion', { 'send_to': 'AW-16873673665/vUk2CJ7s2P0bEMGn_-0-' });
+          }
+        }
+
+        // Enriquecer + trackear todos los links WhatsApp (data-wa="1")
+        document.querySelectorAll('a[data-wa="1"]').forEach(function (a) {
+          var cta = a.getAttribute('data-cta') || 'repuestos-landing';
+          a.href = enrich(a.href, cta);
+          a.addEventListener('click', function () { trackConversion(cta); });
+        });
+
+        // Nav: estado al hacer scroll
+        var nav = document.getElementById('nav');
+        function onScroll() {
+          if (window.scrollY > 60) {
+            nav.classList.add('glass-dark', 'border-yellow-subtle', 'glow-yellow');
+            nav.classList.remove('bg-black/30');
+          } else {
+            nav.classList.remove('glass-dark', 'border-yellow-subtle', 'glow-yellow');
+            nav.classList.add('bg-black/30');
+          }
+        }
+        addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+        // Scroll-reveal
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-reveal').forEach(function (el) { io.observe(el); });
+
+        // Barra fija móvil: aparece recién cuando el CTA del hero sale de vista
+        var stickyCta = document.getElementById('sticky-cta');
+        var heroCta = document.querySelector('a[data-cta="repuestos-hero-cta"]');
+        if (stickyCta && heroCta) {
+          new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              stickyCta.style.transform = e.isIntersecting ? 'translateY(130%)' : 'translateY(0)';
+            });
+          }, { threshold: 0 }).observe(heroCta);
+        }
+
+        // FAQ acordeón
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var btn = item.querySelector('.faq-q'), ans = item.querySelector('.faq-a'), chev = item.querySelector('.faq-chevron');
+          btn.addEventListener('click', function () {
+            var open = !ans.classList.contains('hidden');
+            ans.classList.toggle('hidden', open);
+            btn.setAttribute('aria-expanded', String(!open));
+            if (chev) chev.style.transform = open ? '' : 'rotate(90deg)';
+          });
+        });
+
+        // Año
+        var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      })();
+    </script>
   </body>
 </html>

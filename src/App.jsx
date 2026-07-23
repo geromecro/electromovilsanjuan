@@ -1282,6 +1282,7 @@ function Footer() {
               { label: 'Baterías en San Juan', href: '/baterias-san-juan/' },
               { label: 'Electricidad del automotor', href: '/electricidad-del-automotor-san-juan/' },
               { label: 'Repuestos del automotor', href: '/repuestos-san-juan/' },
+              { label: 'Faros y luces LED', href: '/faros-lamparas-led-san-juan/' },
               { label: 'Precio de batería de auto', href: '/precio-bateria-auto-san-juan/' },
               { label: 'Batería Moura en San Juan', href: '/bateria-moura-san-juan/' },
             ].map((l) => (
