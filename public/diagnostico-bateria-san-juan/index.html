@@ -3,6 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Analytics 4 (gtag.js) - deferred for performance -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      function _loadGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZEVZ2KNHBL';
+        s.async = true;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-ZEVZ2KNHBL');
+      }
+      setTimeout(_loadGtag, 3000);
+      ['click','scroll','keydown'].forEach(function(e) {
+        addEventListener(e, _loadGtag, {once: true});
+      });
+    </script>
     <title>Diagnóstico de Batería Gratis en San Juan | Electromóvil</title>
     <meta
       name="description"
