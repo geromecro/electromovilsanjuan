@@ -5,7 +5,13 @@
       "has": [{ "type": "host", "value": "www.electromovilsanjuan.com" }],
       "destination": "https://electromovilsanjuan.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/precio-bateria-auto-san-juan", "destination": "/baterias-san-juan/", "permanent": true },
+    { "source": "/precio-bateria-auto-san-juan/", "destination": "/baterias-san-juan/", "permanent": true },
+    { "source": "/diagnostico-bateria-san-juan", "destination": "/baterias-san-juan/", "permanent": true },
+    { "source": "/diagnostico-bateria-san-juan/", "destination": "/baterias-san-juan/", "permanent": true },
+    { "source": "/baterias-de-auto-san-juan", "destination": "/baterias-san-juan/", "permanent": true },
+    { "source": "/baterias-de-auto-san-juan/", "destination": "/baterias-san-juan/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" }
