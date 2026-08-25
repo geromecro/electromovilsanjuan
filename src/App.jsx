@@ -1202,14 +1202,9 @@ function SeoLandingLinks() {
       href: '/baterias-san-juan/',
     },
     {
-      title: 'Baterías de Auto en San Juan',
-      desc: 'Qué batería elegir según uso, clima y tipo de vehículo.',
-      href: '/baterias-de-auto-san-juan/',
-    },
-    {
-      title: 'Precio de Batería de Auto',
-      desc: 'Factores que definen el precio y cómo evitar pagar de más.',
-      href: '/precio-bateria-auto-san-juan/',
+      title: 'Faros y Luces LED',
+      desc: 'Ópticas, lámparas LED, halógenas y xenón para todas las marcas.',
+      href: '/faros-lamparas-led-san-juan/',
     },
     {
       title: 'Batería Moura en San Juan',
