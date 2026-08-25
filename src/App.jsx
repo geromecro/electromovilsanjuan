@@ -1212,11 +1212,6 @@ function SeoLandingLinks() {
       href: '/bateria-moura-san-juan/',
     },
     {
-      title: 'Diagnóstico de Batería Gratis',
-      desc: 'Cómo funciona el chequeo gratuito en 5 minutos y cuándo conviene hacerlo.',
-      href: '/diagnostico-bateria-san-juan/',
-    },
-    {
       title: 'Electricidad del Automotor',
       desc: 'Baterías, alternadores, arranques, luces e instalación eléctrica con taller propio.',
       href: '/electricidad-del-automotor-san-juan/',
