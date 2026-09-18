@@ -913,7 +913,8 @@ function ProductGallery() {
     },
     {
       name: 'Pértigas',
-      desc: 'Equipamiento especializado para minería y trabajo en altura. San Juan es una de las principales provincias mineras de Argentina, y proveemos pértigas y accesorios eléctricos para la industria. Consultá disponibilidad y especificaciones técnicas por WhatsApp.',
+      href: '/equipamiento-minero/',
+      desc: 'Equipamiento para flota minera: pértigas LED, balizas estroboscópicas, faros de trabajo, alarmas de retroceso y accesorios de faena. San Juan es una de las principales provincias mineras de Argentina. Mirá el catálogo completo.',
       img: '/productos/pertigas.webp',
       alt: 'Pértigas y equipamiento eléctrico minero en San Juan',
     },
@@ -945,10 +946,10 @@ function ProductGallery() {
         {products.map((product) => (
           <a
             key={product.name}
-            href={`${WHATSAPP}?text=${encodeURIComponent(`Hola, consulto por ${product.name}`)}`}
-            target="_blank"
+            href={product.href ?? `${WHATSAPP}?text=${encodeURIComponent(`Hola, consulto por ${product.name}`)}`}
+            target={product.href ? undefined : '_blank'}
             rel="noopener noreferrer"
-            onClick={trackWhatsAppConversion}
+            onClick={product.href ? undefined : trackWhatsAppConversion}
             className="scroll-reveal product-card group relative rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-yellow-brand/30 transition-all duration-300"
           >
             {/* Image area */}
