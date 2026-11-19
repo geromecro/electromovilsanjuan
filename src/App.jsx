@@ -349,7 +349,7 @@ function Hero() {
               <span className="font-bold text-sm text-white">4.6</span>
               <span className="text-ivory/40 text-xs">en Google</span>
               <span className="w-1 h-1 rounded-full bg-ivory/30" />
-              <span className="text-ivory/60 text-xs">+201 reseñas</span>
+              <span className="text-ivory/60 text-xs">+250 reseñas</span>
             </div>
 
             {/* Headline */}
@@ -753,7 +753,7 @@ function Philosophy() {
             </p>
             <div className="scroll-reveal manifesto-line mt-8 grid grid-cols-1 gap-3">
               {[
-                { icon: Package,     text: 'Stock completo: Moura, Reymax, Sermat, alternadores, arranques y más' },
+                { icon: Package,     text: 'Stock completo: Moura, Sermat, Pioneiro, Reymax, alternadores, arranques y más' },
                 { icon: SearchCheck, text: 'Diagnóstico gratuito de baterías en 5 minutos' },
                 { icon: Wrench,      text: 'Reparación en taller propio con garantía de trabajo' },
                 { icon: Clock,       text: 'Más de 40 años de experiencia en el rubro' },
@@ -850,7 +850,7 @@ function Testimonials() {
             ))}
           </div>
           <span className="text-ivory/70 text-sm font-semibold">4.6/5</span>
-          <span className="text-ivory/50 text-sm">— 201 reseñas en Google</span>
+          <span className="text-ivory/50 text-sm">— más de 250 reseñas en Google</span>
         </div>
       </div>
 
@@ -895,7 +895,7 @@ function Testimonials() {
             ))}
           </div>
           <span className="text-ivory/80 text-sm font-semibold">4.6</span>
-          <span className="text-ivory/40 text-sm">201 reseñas en Google</span>
+          <span className="text-ivory/40 text-sm">Más de 250 reseñas en Google</span>
           <ChevronRight size={14} className="text-ivory/40 shrink-0" />
         </a>
       </div>
@@ -928,9 +928,9 @@ function ProductGallery() {
   const products = [
     {
       name: 'Baterías',
-      desc: 'Trabajamos con las marcas líderes del mercado: Moura, Reymax y Sermat. Tenemos baterías para autos, camionetas, utilitarios, maquinaria pesada y motos. El clima extremo de San Juan exige baterías de alta resistencia térmica — por eso seleccionamos productos que garantizan rendimiento y durabilidad en temperaturas elevadas. Todas nuestras baterías vienen con garantía de fábrica y te hacemos el diagnóstico gratuito antes de la compra para asegurarnos de que realmente necesitás un cambio.',
+      desc: 'Trabajamos con las marcas líderes del mercado: Moura, Sermat, Pioneiro y Reymax. Tenemos baterías para autos, camionetas, utilitarios, maquinaria pesada y motos. El clima extremo de San Juan exige baterías de alta resistencia térmica — por eso seleccionamos productos que garantizan rendimiento y durabilidad en temperaturas elevadas. Todas nuestras baterías vienen con garantía de fábrica y te hacemos el diagnóstico gratuito antes de la compra para asegurarnos de que realmente necesitás un cambio.',
       img: '/productos/baterias.webp',
-      alt: 'Baterías Moura, Reymax y Sermat para vehículos en San Juan',
+      alt: 'Baterías Moura, Sermat, Pioneiro y Reymax para vehículos en San Juan',
     },
     {
       name: 'Alternadores',
@@ -1137,7 +1137,7 @@ function FAQ() {
     },
     {
       q: '¿Qué marcas de baterías trabajan?',
-      a: 'Trabajamos con las tres marcas líderes del mercado argentino: Moura, Reymax y Sermat. Cada una tiene líneas específicas para autos, camionetas, utilitarios y maquinaria pesada. Te asesoramos sobre cuál es la mejor opción según tu vehículo, uso y presupuesto. Todas vienen con garantía de fábrica.',
+      a: 'Trabajamos con las marcas líderes del mercado argentino: Moura, Sermat, Pioneiro y Reymax. Cada una tiene líneas específicas para autos, camionetas, utilitarios y maquinaria pesada. Te asesoramos sobre cuál es la mejor opción según tu vehículo, uso y presupuesto. Todas vienen con garantía de fábrica.',
     },
     {
       q: '¿Cuánto dura una batería en San Juan?',
